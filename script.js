@@ -12,7 +12,8 @@ toggle.addEventListener('click', () => {
   toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 });
 nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNavigation));
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearLabel = document.getElementById('year');
+if (yearLabel) yearLabel.textContent = new Date().getFullYear();
 
 // Team login modal
 const modal = document.getElementById('login-modal');
@@ -42,13 +43,16 @@ offersCard.addEventListener('keydown', event => {
 });
 
 // Expand/collapse additional menu cards.
-document.getElementById('view-more').addEventListener('click', event => {
-  const extras = document.querySelectorAll('.extra-menu');
-  const showing = event.currentTarget.getAttribute('aria-expanded') === 'true';
-  extras.forEach(item => item.classList.toggle('hidden', showing));
-  event.currentTarget.setAttribute('aria-expanded', String(!showing));
-  event.currentTarget.textContent = showing ? 'VIEW MORE' : 'VIEW LESS';
-});
+const viewMoreButton = document.getElementById('view-more');
+if (viewMoreButton) {
+  viewMoreButton.addEventListener('click', event => {
+    const extras = document.querySelectorAll('.extra-menu');
+    const showing = event.currentTarget.getAttribute('aria-expanded') === 'true';
+    extras.forEach(item => item.classList.toggle('hidden', showing));
+    event.currentTarget.setAttribute('aria-expanded', String(!showing));
+    event.currentTarget.textContent = showing ? 'VIEW MORE' : 'VIEW LESS';
+  });
+}
 
 // Click-to-open photo gallery with previous/next controls.
 const galleryImages = Array.from(document.querySelectorAll('.gallery-photo img'));

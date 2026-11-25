@@ -292,3 +292,29 @@ body{background:#fff;color:#171717}
 .hero-welcome .welcome-small{font-size:12px;font-weight:700;color:#fff;letter-spacing:2px}
 .hero-welcome .welcome-brand{font-size:clamp(21px,2.6vw,30px);font-weight:1000;color:#ffcf35;letter-spacing:1px;text-shadow:1px 2px 0 #9f1018}
 @media(max-width:560px){.hero-welcome{gap:7px}.hero-welcome .welcome-small{font-size:10px}.hero-welcome .welcome-brand{font-size:23px}}
+
+
+/* Menu refresh: compact two-column food cards on phones. */
+.menu-price-note{margin:-22px 0 22px;text-align:center;color:#777;font-size:11px}
+.menu-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.menu-card{display:flex;flex-direction:column;min-width:0}
+.menu-card .food-photo{display:block;width:100%;height:190px;object-fit:cover;background:#f5eee8}
+.menu-card-copy{display:flex;flex:1;flex-direction:column;padding:17px}
+.menu-card h3{font-size:22px;line-height:1.08}
+.menu-card p{line-height:1.5;min-height:36px}
+.menu-price{display:block;margin-top:auto;padding-top:5px;color:#c91520;font-size:17px;font-weight:900}
+@media(max-width:800px){
+  .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .menu-card .food-photo{height:155px}
+  .menu-card-copy{padding:13px}
+  .menu-card h3{font-size:19px}
+}
+@media(max-width:560px){
+  .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .menu-card .food-photo{height:125px}
+  .menu-card-copy{padding:10px}
+  .menu-card h3{font-size:16px;line-height:1.12;margin-bottom:6px}
+  .menu-card p{font-size:10px;line-height:1.4;margin-bottom:8px;min-height:42px}
+  .menu-price{font-size:15px}
+  .menu-price-note{font-size:10px;margin:-18px 0 17px}
+}
