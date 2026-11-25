@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>Hardee's | Hand-crafted food, made for you.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Hardee's home"><img src="assets/hardees_logo_header_black.png" alt="Hardee's logo"></a>
+    <nav class="navigation" id="main-navigation" aria-label="Main navigation">
+      <a href="#home">HOME</a><a href="#menu">MENU</a><a href="#offers">OFFERS</a><a href="#location">LOCATION</a>
+      <button class="login-trigger" type="button" data-open-login>LOGIN</button>
+    </nav>
+    <div class="header-actions">
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="main-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="order-link" href="#menu">ORDER NOW</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-slideshow" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hardees-meal.png">
+          <source src="assets/burger_making.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow hero-welcome"><span class="welcome-small">WELCOME TO</span> <span class="welcome-brand">HARDEE'S</span></p><h2 class="hero-slogan">GOOD FOOD.<br><span>GOOD TIMES.</span></h2>
+        <p class="intro">Visit Hardee's at 481 US Highway 1 S in Rockingham, North Carolina.</p>
+        <div class="hero-actions"><a class="button button-yellow" href="#menu">VIEW MENU</a><a class="button button-outline" href="#location">FIND US</a></div>
+      </div>
+    </section>
+
+    <section class="timings-strip" aria-labelledby="timings-title">
+      <div class="timings-title-card"><p class="eyebrow">PLAN YOUR VISIT</p><h2 id="timings-title">TIMINGS</h2><span class="timing-clock" aria-hidden="true">◷</span></div>
+      <div class="timings-details"><strong>Monday – Sunday</strong><span>5:30 AM – 10:00 PM</span><small>Breakfast served until approximately <b>10:30 AM</b>.</small></div>
+    </section>
+
+    <section class="menu-section section-wrap" id="menu">
+      <article class="offers-card" id="offers" role="button" tabindex="0" aria-label="Explore menu and offers"><div><p class="eyebrow">SPECIALS &amp; SAVINGS</p><h3>GOOD DEALS. GREAT TASTE.</h3><p>Tap to explore the menu and available offers.</p></div><span class="offers-mark">OFFERS <span aria-hidden="true">↘</span></span></article>
+      <div class="section-heading"><p class="eyebrow">MADE FRESH FOR YOU</p><h2>LATEST CRAVINGS</h2><p>Enjoy hand-crafted breakfast, burgers, chicken and delicious sides.</p></div>
+      <div class="menu-grid" id="menu-grid">
+        <article class="menu-card"><div class="food-photo food-1" role="img" aria-label="Burger meal"></div><div class="menu-card-copy"><h3>Famous Star Combo</h3><p>A classic burger combo.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card"><div class="food-photo food-2" role="img" aria-label="Bacon burger meal"></div><div class="menu-card-copy"><h3>Bacon Beast Burger Combo</h3><p>A hearty burger combo.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card"><div class="food-photo food-3" role="img" aria-label="Breakfast biscuits"></div><div class="menu-card-copy"><h3>Cinnamon ’N’ Raisin Biscuit 2-pack</h3><p>A sweet breakfast favourite.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card"><div class="food-photo food-4" role="img" aria-label="Chicken biscuit"></div><div class="menu-card-copy"><h3>Hand-Breaded Chicken Biscuit Combo</h3><p>A satisfying breakfast combo.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card"><div class="food-photo food-5" role="img" aria-label="Iced coffee"></div><div class="menu-card-copy"><h3>S’mores Iced Coffee</h3><p>A cool coffee treat.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card"><div class="food-photo food-6" role="img" aria-label="Freshly brewed coffee"></div><div class="menu-card-copy"><h3>Freshly Brewed Coffee</h3><p>Freshly brewed and ready to enjoy.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card extra-menu hidden"><div class="food-photo food-7" role="img" aria-label="Chicken tenders"></div><div class="menu-card-copy"><h3>Crispy Chicken Tenders</h3><p>Golden, crispy and satisfying.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card extra-menu hidden"><div class="food-photo food-8" role="img" aria-label="French fries"></div><div class="menu-card-copy"><h3>Natural-Cut French Fries</h3><p>A golden, crispy side.</p><span class="availability">Available</span></div></article>
+        <article class="menu-card extra-menu hidden"><div class="food-photo food-9" role="img" aria-label="Breakfast sandwich"></div><div class="menu-card-copy"><h3>Breakfast Sandwich</h3><p>A delicious start to your day.</p><span class="availability">Available</span></div></article>
+      </div>
+      <button class="button button-yellow view-more" id="view-more" type="button" aria-expanded="false">VIEW MORE</button>
+    </section>
+
+    <section class="inside-section" id="inside"><div class="section-wrap">
+      <div class="section-heading light-heading"><p class="eyebrow">OUR RESTAURANT</p><h2>A LOOK INSIDE HARDEE'S</h2></div>
+      <div class="gallery-grid gallery-real" id="photo-gallery">
+        <button class="gallery-photo" type="button" data-gallery-index="0" aria-label="Open photo 1"><img src="assets/hardees-rockingham-store.jpg" alt="Hardee's restaurant exterior in Rockingham" loading="lazy"></button>
+        <button class="gallery-photo" type="button" data-gallery-index="1" aria-label="Open photo 2"><img src="assets/hardees-meal.png" alt="Hardee's breakfast burger meal with coffee and crispy bites" loading="lazy"></button>
+        <button class="gallery-photo" type="button" data-gallery-index="2" aria-label="Open photo 3"><img src="assets/coffee-bar.png" alt="Coffee bar and drink station inside a restaurant" loading="lazy"></button>
+        <button class="gallery-photo" type="button" data-gallery-index="3" aria-label="Open photo 4"><img src="assets/dining-area.png" alt="Restaurant dining booths" loading="lazy"></button>
+        <button class="gallery-photo" type="button" data-gallery-index="4" aria-label="Open photo 5"><img src="assets/hardees-exterior.png" alt="Hardee's restaurant exterior" loading="lazy"></button>
+      </div>
+    </div></section>
+
+    <section class="location-section section-wrap" id="location">
+      <div class="location-heading"><p class="eyebrow">VISIT US</p></div>
+      <div class="address-card"><h2>Hardee's <span>481 US Highway 1 S</span></h2><p><strong>Rockingham, NC 28379</strong></p></div>
+      <div class="map-frame"><iframe title="Map to Hardee's in Rockingham" src="https://maps.google.com/maps?q=Hardee%27s%2C%20481%20US%20Highway%201%20S%2C%20Rockingham%2C%20NC%2028379&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <p class="location-description">For a delicious breakfast, lunch or dinner, stop by our Rockingham location.</p>
+      <div class="location-actions"><a class="button button-yellow" target="_blank" rel="noopener" href="https://maps.google.com/maps?q=Hardee%27s,%20481%20US%20Highway%201%20S,%20Rockingham%2028379">GET DIRECTIONS</a><a class="phone-link" href="tel:+19108177055">📞 (910) 817-7055</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img src="assets/hardees_logo_footer_white.png" alt="Hardee's logo"><p>Hand-crafted food, made for you.</p></div>
+    <div class="footer-column"><h3>COMPANY</h3><a href="https://www.hardees.com/about-us" target="_blank" rel="noopener">About Us</a><a href="https://www.hardees.com/locations" target="_blank" rel="noopener">Location</a><a href="https://www.hardees.com/contact-us" target="_blank" rel="noopener">Contact</a></div>
+    <div class="footer-column"><h3>QUICK LINKS</h3><a href="#menu">Menu</a><a href="#offers">Offers</a><a href="#location">Location</a><a href="#login" data-open-login>Login</a></div>
+  </div><small>© <span id="year"></span> Hardee's. All rights reserved.</small></footer>
+
+  <div class="modal-backdrop" id="login-modal" aria-hidden="true"><section class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title"><button class="modal-close" type="button" aria-label="Close login">×</button><p class="eyebrow">TEAM ACCESS</p><h2 id="login-title">LOGIN</h2><form id="login-form"><label for="login-role">Login as</label><select id="login-role" required><option value="staff">Staff</option><option value="admin">Admin</option></select><label for="login-email">Email / Username</label><input id="login-email" type="text" placeholder="Enter your email or username" required><label for="login-password">Password</label><input id="login-password" type="password" placeholder="Enter your password" required><button class="button button-yellow" type="submit">LOGIN</button><p class="login-note">Demo login interface — connect your authentication system to enable secure staff and admin access.</p></form></section></div>
+  <div class="lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
+    <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="">
+    <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next photo">›</button>
+    <p class="lightbox-count" id="lightbox-count"></p>
+  </div>
+  <script src="script.js"></script>
+</body></html>
