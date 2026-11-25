@@ -92,6 +92,7 @@ document.addEventListener('keydown', event => {
     closeModal();
     closePhoto();
     closeNavigation();
+    closeMenuItem();
   }
   if (lightbox.classList.contains('open') && event.key === 'ArrowRight') showPhoto(activePhoto + 1);
   if (lightbox.classList.contains('open') && event.key === 'ArrowLeft') showPhoto(activePhoto - 1);
@@ -102,3 +103,47 @@ document.getElementById('login-form').addEventListener('submit', event => {
   event.preventDefault();
   alert('Login form is ready for your staff/admin authentication backend.');
 });
+
+// Click a menu item to view its larger photo and full details in a popup.
+const menuItemModal = document.getElementById('menu-item-modal');
+const menuItemImage = document.getElementById('menu-item-image');
+const menuItemTitle = document.getElementById('menu-item-title');
+const menuItemDescription = document.getElementById('menu-item-description');
+const menuItemPrice = document.getElementById('menu-item-price');
+const closeMenuItem = () => {
+  if (!menuItemModal) return;
+  menuItemModal.classList.remove('open');
+  menuItemModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+};
+const openMenuItem = card => {
+  if (!menuItemModal || !card) return;
+  const photo = card.querySelector('.food-photo');
+  const title = card.querySelector('h3');
+  const description = card.querySelector('.menu-card-copy p');
+  const price = card.querySelector('.menu-price');
+  menuItemImage.src = photo ? photo.currentSrc || photo.src : '';
+  menuItemImage.alt = photo ? photo.alt : (title ? title.textContent.trim() : 'Menu item');
+  menuItemTitle.textContent = title ? title.textContent.trim() : 'Menu item';
+  menuItemDescription.textContent = description ? description.textContent.trim() : '';
+  menuItemPrice.textContent = price ? price.textContent.trim() : '';
+  menuItemModal.classList.add('open');
+  menuItemModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  menuItemModal.querySelector('.menu-item-close').focus();
+};
+document.querySelectorAll('.menu-card').forEach(card => {
+  card.addEventListener('click', () => openMenuItem(card));
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openMenuItem(card);
+    }
+  });
+});
+if (menuItemModal) {
+  menuItemModal.querySelector('.menu-item-close').addEventListener('click', closeMenuItem);
+  menuItemModal.addEventListener('click', event => {
+    if (event.target === menuItemModal) closeMenuItem();
+  });
+}

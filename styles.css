@@ -289,7 +289,7 @@ body{background:#fff;color:#171717}
 .site-header .brand img{filter:none!important}
 .site-footer .footer-brand img{filter:none!important}
 .hero-welcome{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;font-size:12px!important;letter-spacing:2px!important;color:#fff!important}
-.hero-welcome .welcome-small{font-size:55px;font-weight:700;color:#fff;letter-spacing:2px}
+.hero-welcome .welcome-small{font-size:35px;font-weight:700;color:#fff;letter-spacing:2px}
 .hero-welcome .welcome-brand{font-size:clamp(75px,2.6vw,30px);font-weight:1000;color:#ffcf35;letter-spacing:1px;text-shadow:1px 2px 0 #9f1018}
 @media(max-width:560px){.hero-welcome{gap:7px}.hero-welcome .welcome-small{font-size:10px}.hero-welcome .welcome-brand{font-size:23px}}
 
@@ -317,4 +317,60 @@ body{background:#fff;color:#171717}
   .menu-card p{font-size:10px;line-height:1.4;margin-bottom:8px;min-height:42px}
   .menu-price{font-size:15px}
   .menu-price-note{font-size:10px;margin:-18px 0 17px}
+}
+
+/* Final responsive welcome, menu interaction and phone refinements */
+.hero-content{width:min(100%,1040px);padding:100px clamp(24px,7vw,110px);}
+.hero-welcome{display:flex;align-items:baseline;gap:clamp(8px,1.5vw,18px);flex-wrap:nowrap;white-space:nowrap;margin:0 0 24px!important;letter-spacing:1px!important;}
+.hero-welcome .welcome-small{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(21px,4.1vw,49px)!important;line-height:1;font-weight:800;letter-spacing:clamp(1px,.25vw,3px)!important;color:#fff;}
+.hero-welcome .welcome-brand{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;font-size:clamp(58px,10vw,116px)!important;line-height:.92;font-weight:1000;letter-spacing:-1px;color:#ffca28;text-shadow:2px 3px 0 #a80f18;}
+.menu-card{cursor:pointer;position:relative;transition:transform .22s ease,box-shadow .22s ease;}
+.menu-card:focus-visible{outline:3px solid var(--yellow);outline-offset:4px;}
+.menu-card:after{content:'VIEW DETAILS  ↗';display:block;margin:0 17px 15px;color:var(--red);font-size:10px;font-weight:900;letter-spacing:1px;}
+.menu-item-backdrop{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:20px;}
+.menu-item-backdrop.open{display:flex;}
+.menu-item-modal{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(760px,100%);max-height:min(85vh,650px);overflow:auto;background:#fff;border-radius:12px;box-shadow:0 24px 80px #0008;}
+.menu-item-image{width:100%;height:100%;min-height:330px;max-height:520px;object-fit:cover;background:#f4f0eb;}
+.menu-item-details{padding:clamp(24px,4vw,44px);align-self:center;}
+.menu-item-details .eyebrow{color:var(--red);font-size:11px;font-weight:900;letter-spacing:1.5px;}
+.menu-item-details h2{font:900 clamp(30px,4vw,46px)/1.02 'Barlow Condensed',Impact,sans-serif;margin:10px 0 14px;color:#171717;}
+.menu-item-details p:not(.eyebrow){font-size:14px;line-height:1.7;color:#666;}
+.menu-item-price{display:inline-block;margin-top:14px;color:var(--red);font-size:25px;}
+.menu-item-close{position:absolute;right:12px;top:12px;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:#111;font-size:30px;line-height:1;cursor:pointer;box-shadow:0 2px 12px #0002;}
+body.modal-open{overflow:hidden;}
+@media(max-width:800px){
+ .hero-content{padding:76px 6%;}
+ .hero-welcome{gap:10px;}
+ .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .menu-item-modal{width:min(560px,100%);grid-template-columns:1fr;max-height:88vh;}
+ .menu-item-image{height:260px;min-height:0;max-height:34vh;}
+ .menu-item-details{padding:22px 24px 28px;}
+}
+@media(max-width:560px){
+ .hero{min-height:500px;}
+ .hero-content{padding:62px 5%;}
+ .hero-welcome{gap:7px;margin-bottom:19px!important;white-space:nowrap;}
+ .hero-welcome .welcome-small{font-size:clamp(16px,5vw,22px)!important;letter-spacing:1px!important;}
+ .hero-welcome .welcome-brand{font-size:clamp(43px,12.2vw,60px)!important;letter-spacing:-.7px;}
+ .hero-slogan{font-size:clamp(48px,12vw,64px)!important;line-height:.92;}
+ .hero .intro{max-width:330px;font-size:12px;line-height:1.6;}
+ .hero-actions{gap:10px;flex-wrap:wrap;}
+ .hero-actions .button{min-height:43px;padding:0 16px;font-size:10px;}
+ .section-wrap{padding:58px 5%;}
+ .section-heading{margin-bottom:28px;}
+ .section-heading h2{font-size:clamp(34px,10vw,45px);}
+ .menu-grid{gap:10px;}
+ .menu-card .food-photo{height:clamp(112px,34vw,150px);}
+ .menu-card-copy{padding:10px;}
+ .menu-card h3{font-size:16px;}
+ .menu-card p{font-size:10px;min-height:42px;}
+ .menu-card:after{margin:0 10px 12px;font-size:9px;}
+ .menu-item-image{height:220px;max-height:30vh;}
+ .menu-item-details h2{font-size:34px;}
+}
+@media(max-width:360px){
+ .hero-welcome .welcome-small{font-size:15px!important;}
+ .hero-welcome .welcome-brand{font-size:40px!important;}
+ .hero-slogan{font-size:45px!important;}
+ .order-link{padding:0 8px;font-size:8px;}
 }
