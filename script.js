@@ -200,7 +200,6 @@ if (videoAdPopup && videoAdPlayer) {
   videoAdPopup.addEventListener('click', event => { if (event.target === videoAdPopup) closeVideoAd(); });
   videoAdSound.addEventListener('click', () => {
     videoAdPlayer.muted = !videoAdPlayer.muted;
-    videoAdSound.textContent = videoAdPlayer.muted ? '🔇' : '🔊';
     videoAdSound.setAttribute('aria-label', videoAdPlayer.muted ? 'Turn sound on' : 'Turn sound off');
     videoAdSound.setAttribute('aria-pressed', String(!videoAdPlayer.muted));
     if (!videoAdPlayer.paused) return;
