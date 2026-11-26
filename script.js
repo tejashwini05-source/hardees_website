@@ -54,22 +54,48 @@ if (viewMoreButton) {
   });
 }
 
-// Click-to-open photo gallery with previous/next controls.
+// The welcome hero starts directly with the burger-making video (no opening photo/modal).
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  const startHeroVideo = () => {
+    const playback = heroVideo.play();
+    if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+  };
+  if (heroVideo.readyState >= 2) startHeroVideo();
+  else heroVideo.addEventListener('canplay', startHeroVideo, { once: true });
+}
+
+// Unified gallery viewer: burger video is item 1, followed by the existing photos.
 const galleryImages = Array.from(document.querySelectorAll('.gallery-photo img'));
+const galleryVideoButton = document.querySelector('.gallery-video');
+const galleryTileVideo = galleryVideoButton?.querySelector('video');
 const lightbox = document.getElementById('gallery-lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
+const lightboxVideo = document.getElementById('lightbox-video');
 const lightboxCount = document.getElementById('lightbox-count');
-let activePhoto = 0;
+let activeGalleryItem = 0;
 
-function showPhoto(index) {
-  activePhoto = (index + galleryImages.length) % galleryImages.length;
-  const source = galleryImages[activePhoto];
-  lightboxImage.src = source.src;
-  lightboxImage.alt = source.alt;
-  lightboxCount.textContent = `${activePhoto + 1} / ${galleryImages.length}`;
+function showGalleryItem(index) {
+  const itemCount = galleryImages.length + 1;
+  activeGalleryItem = (index + itemCount) % itemCount;
+  if (activeGalleryItem === 0) {
+    lightboxImage.hidden = true;
+    lightboxVideo.hidden = false;
+    lightboxVideo.currentTime = 0;
+    const playback = lightboxVideo.play();
+    if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+  } else {
+    lightboxVideo.pause();
+    lightboxVideo.hidden = true;
+    lightboxImage.hidden = false;
+    const source = galleryImages[activeGalleryItem - 1];
+    lightboxImage.src = source.src;
+    lightboxImage.alt = source.alt;
+  }
+  lightboxCount.textContent = `${activeGalleryItem + 1} / ${itemCount}`;
 }
-function openPhoto(index) {
-  showPhoto(index);
+function openGalleryItem(index) {
+  showGalleryItem(index);
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -77,13 +103,15 @@ function openPhoto(index) {
 function closePhoto() {
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden', 'true');
+  lightboxVideo.pause();
   document.body.style.overflow = '';
 }
+galleryVideoButton?.addEventListener('click', () => openGalleryItem(0));
 document.querySelectorAll('.gallery-photo').forEach(button => {
-  button.addEventListener('click', () => openPhoto(Number(button.dataset.galleryIndex)));
+  button.addEventListener('click', () => openGalleryItem(Number(button.dataset.galleryIndex) + 1));
 });
-document.querySelector('.lightbox-prev').addEventListener('click', () => showPhoto(activePhoto - 1));
-document.querySelector('.lightbox-next').addEventListener('click', () => showPhoto(activePhoto + 1));
+document.querySelector('.lightbox-prev').addEventListener('click', () => showGalleryItem(activeGalleryItem - 1));
+document.querySelector('.lightbox-next').addEventListener('click', () => showGalleryItem(activeGalleryItem + 1));
 document.querySelector('.lightbox-close').addEventListener('click', closePhoto);
 lightbox.addEventListener('click', event => { if (event.target === lightbox) closePhoto(); });
 
@@ -94,8 +122,8 @@ document.addEventListener('keydown', event => {
     closeNavigation();
     closeMenuItem();
   }
-  if (lightbox.classList.contains('open') && event.key === 'ArrowRight') showPhoto(activePhoto + 1);
-  if (lightbox.classList.contains('open') && event.key === 'ArrowLeft') showPhoto(activePhoto - 1);
+  if (lightbox.classList.contains('open') && event.key === 'ArrowRight') showGalleryItem(activeGalleryItem + 1);
+  if (lightbox.classList.contains('open') && event.key === 'ArrowLeft') showGalleryItem(activeGalleryItem - 1);
 });
 
 // This is a front-end demo form. Real staff/admin authentication must be connected server-side.
@@ -146,4 +174,38 @@ if (menuItemModal) {
   menuItemModal.addEventListener('click', event => {
     if (event.target === menuItemModal) closeMenuItem();
   });
+}
+
+
+
+
+// Play the promotional video automatically when the website opens.
+const videoAdPopup = document.getElementById('video-ad-popup');
+const videoAdPlayer = document.getElementById('video-ad-player');
+const videoAdSound = document.getElementById('video-ad-sound');
+const closeVideoAd = () => {
+  if (!videoAdPopup) return;
+  videoAdPopup.classList.remove('open');
+  videoAdPopup.setAttribute('aria-hidden', 'true');
+  videoAdPlayer.pause();
+  document.body.style.overflow = '';
+};
+if (videoAdPopup && videoAdPlayer) {
+  videoAdPopup.classList.add('open');
+  videoAdPopup.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  const adPlayback = videoAdPlayer.play();
+  if (adPlayback && typeof adPlayback.catch === 'function') adPlayback.catch(() => {});
+  document.getElementById('video-ad-close').addEventListener('click', closeVideoAd);
+  videoAdPopup.addEventListener('click', event => { if (event.target === videoAdPopup) closeVideoAd(); });
+  videoAdSound.addEventListener('click', () => {
+    videoAdPlayer.muted = !videoAdPlayer.muted;
+    videoAdSound.textContent = videoAdPlayer.muted ? '🔇' : '🔊';
+    videoAdSound.setAttribute('aria-label', videoAdPlayer.muted ? 'Turn sound on' : 'Turn sound off');
+    videoAdSound.setAttribute('aria-pressed', String(!videoAdPlayer.muted));
+    if (!videoAdPlayer.paused) return;
+    const playback = videoAdPlayer.play();
+    if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeVideoAd(); });
 }
