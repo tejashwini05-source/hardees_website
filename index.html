@@ -1,820 +1,800 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <title>Hardee's | Hand-crafted food, made for you.</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#111111" name="theme-color"/>
+<title>Hardee's | Hand-crafted food, made for you.</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Hardee's home"><img src="assets/hardees_logo_header_black.png" alt="Hardee's logo"></a>
-    <nav class="navigation" id="main-navigation" aria-label="Main navigation">
-      <a href="#home">HOME</a><a href="#menu">MENU</a><a href="#offers">OFFERS</a><a href="#location">LOCATION</a>
-      <button class="login-trigger" type="button" data-open-login>LOGIN</button>
-    </nav>
-    <div class="header-actions">
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="main-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <a class="order-link" href="#menu">ORDER NOW</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-slideshow" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
-          <source src="assets/burger_making.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-content">
-        <p class="eyebrow hero-welcome"><span class="welcome-small">WELCOME TO</span> <span class="welcome-brand">HARDEE'S</span></p><h2 class="hero-slogan">GOOD FOOD.<br><span>GOOD TIMES.</span></h2>
-        <p class="intro">Visit Hardee's at 481 US Highway 1 S in Rockingham, North Carolina.</p>
-        <div class="hero-actions"><a class="button button-yellow" href="#menu">VIEW MENU</a><a class="button button-outline" href="#location">FIND US</a></div>
-      </div>
-    </section>
-
-    <section class="timings-strip" aria-labelledby="timings-title">
-      <div class="timings-title-card"><p class="eyebrow">PLAN YOUR VISIT</p><h2 id="timings-title">TIMINGS</h2><span class="timing-clock" aria-hidden="true">◷</span></div>
-      <div class="timings-details"><strong>Monday – Sunday</strong><span>5:30 AM – 10:00 PM</span><small>Breakfast served until approximately <b>10:30 AM</b>.</small></div>
-    </section>
-
-    <section class="menu-section section-wrap" id="menu">
-      <article class="offers-card" id="offers" role="button" tabindex="0" aria-label="Explore menu and offers"><div><p class="eyebrow">SPECIALS &amp; SAVINGS</p><h3>GOOD DEALS. GREAT TASTE.</h3><p>Tap to explore the menu and available offers.</p></div><span class="offers-mark">OFFERS <span aria-hidden="true">↘</span></span></article>
-      <div class="section-heading"><p class="eyebrow">MADE FRESH FOR YOU</p><h2>LATEST CRAVINGS</h2><p>Enjoy hand-crafted breakfast, burgers, chicken and delicious sides.</p></div>
-      <p class="menu-price-note">Sample prices are shown for featured items; additional items display calories. Actual prices may vary by location.</p>
-
-      <div class="menu-category-control">
-        <button class="category-menu-toggle" id="category-menu-toggle" type="button" aria-expanded="false" aria-controls="menu-category-panel">☰ MENU</button>
-        <div class="menu-category-panel hidden" id="menu-category-panel">
-          <p class="category-panel-title">EXPLORE OUR MENU</p>
-          <div class="menu-category-list" id="menu-category-list"></div>
-        </div>
-      </div>
-      <div class="admin-menu-toolbar hidden" id="admin-menu-toolbar">
-        <div><strong>ADMIN MENU MANAGEMENT</strong><small>Add, edit or remove menu items</small></div>
-        <button class="admin-add-button" id="admin-add-item" type="button">＋ ADD ITEM</button>
-      </div>
-
-      <div class="menu-grid" id="menu-grid">
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Famous Star Burger" loading="lazy">
-          <div class="menu-card-copy"><h3>Famous Star Burger</h3><p>Classic charbroiled burger with fresh toppings.</p><strong class="menu-price">$5.49</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-bacon-burger.jpg" alt="Bacon Beast Burger" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Beast Burger</h3><p>A stacked burger with crispy bacon and cheese.</p><strong class="menu-price">$6.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Natural-Cut French Fries" loading="lazy">
-          <div class="menu-card-copy"><h3>Natural-Cut French Fries</h3><p>Golden, lightly salted fries.</p><strong class="menu-price">$2.49</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-coke.jpg" alt="Coca-Cola" loading="lazy">
-          <div class="menu-card-copy"><h3>Coca-Cola</h3><p>Chilled, fizzy cola served over ice.</p><strong class="menu-price">$1.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-bread-omelet.jpg" alt="Bread Omelet" loading="lazy">
-          <div class="menu-card-copy"><h3>Bread Omelet</h3><p>Fluffy egg and cheese breakfast sandwich.</p><strong class="menu-price">$4.49</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-coffee.jpg" alt="Fresh Brewed Coffee" loading="lazy">
-          <div class="menu-card-copy"><h3>Fresh Brewed Coffee</h3><p>Hot coffee, freshly brewed.</p><strong class="menu-price">$1.79</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Iced Coffee" loading="lazy">
-          <div class="menu-card-copy"><h3>Iced Coffee</h3><p>Smooth coffee served chilled over ice.</p><strong class="menu-price">$2.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-vanilla-shake.jpg" alt="Ice Cream Shake" loading="lazy">
-          <div class="menu-card-copy"><h3>Ice Cream Shake</h3><p>Creamy vanilla shake topped with whipped cream.</p><strong class="menu-price">$3.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Crispy Chicken Tenders" loading="lazy">
-          <div class="menu-card-copy"><h3>Crispy Chicken Tenders</h3><p>Golden, crunchy chicken tenders.</p><strong class="menu-price">$5.49</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fried-pie.jpg" alt="Fried Apple Pie" loading="lazy">
-          <div class="menu-card-copy"><h3>Fried Apple Pie</h3><p>Flaky pastry with warm apple filling.</p><strong class="menu-price">$1.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-crispy-curls.jpg" alt="Crispy Curls" loading="lazy">
-          <div class="menu-card-copy"><h3>Crispy Curls</h3><p>Seasoned, crispy curly potato fries.</p><strong class="menu-price">$2.79</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-chicken-sandwich.jpg" alt="Crispy Chicken Sandwich" loading="lazy">
-          <div class="menu-card-copy"><h3>Crispy Chicken Sandwich</h3><p>Crispy chicken with lettuce on a soft bun.</p><strong class="menu-price">$5.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-cinnamon-roll.jpg" alt="Cinnamon Roll" loading="lazy">
-          <div class="menu-card-copy"><h3>Cinnamon Roll</h3><p>Warm cinnamon pastry with sweet icing.</p><strong class="menu-price">$2.49</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-hash-rounds.jpg" alt="Hash Rounds" loading="lazy">
-          <div class="menu-card-copy"><h3>Hash Rounds</h3><p>Crispy golden breakfast potato bites.</p><strong class="menu-price">$1.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-chocolate-shake.jpg" alt="Chocolate Shake" loading="lazy">
-          <div class="menu-card-copy"><h3>Chocolate Shake</h3><p>Rich chocolate shake, served chilled.</p><strong class="menu-price">$3.99</strong></div>
-        </article>
-        <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Breakfast Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Breakfast Biscuit</h3><p>Fluffy biscuit with egg and sausage.</p><strong class="menu-price">$3.99</strong></div>
-        </article>
-
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Biscuit Combo</h3><p>800 - 1610 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Breakfast Bowl" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Bowl</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="S'mores Iced Coffee" loading="lazy">
-          <div class="menu-card-copy"><h3>S'mores Iced Coffee</h3><p>270 - 430 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fried-pie.jpg" alt="S'mores Fried Pie" loading="lazy">
-          <div class="menu-card-copy"><h3>S'mores Fried Pie</h3><p>380 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Bubba Wallace Diecast 1/64 Collectible Car" loading="lazy">
-          <div class="menu-card-copy"><h3>Bubba Wallace Diecast 1/64 Collectible Car</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="12 Bacon, Egg &amp; Cheese Biscuits" loading="lazy">
-          <div class="menu-card-copy"><h3>12 Bacon, Egg &amp; Cheese Biscuits</h3><p>6040 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="12 Sausage Biscuits" loading="lazy">
-          <div class="menu-card-copy"><h3>12 Sausage Biscuits</h3><p>6310 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Frisco" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Frisco</h3><p>670 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-vanilla-shake.jpg" alt="S’mores Hand-Scooped Ice Cream Shake™" loading="lazy">
-          <div class="menu-card-copy"><h3>S’mores Hand-Scooped Ice Cream Shake™</h3><p>910 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Hand-Breaded Chicken Tenders™ Boxes" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Breaded Chicken Tenders™ Boxes</h3><p>880 - 1760 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="BLT Hand-Breaded Chicken Sandwich Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>BLT Hand-Breaded Chicken Sandwich Combo</h3><p>940 - 1660 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Jumbo Chili Dog" loading="lazy">
-          <div class="menu-card-copy"><h3>Jumbo Chili Dog</h3><p>410 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Chili Cheese Fries" loading="lazy">
-          <div class="menu-card-copy"><h3>Chili Cheese Fries</h3><p>400 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Breakfast Burrito Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Burrito Combo</h3><p>930 - 1740 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Breakfast Bowl Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Bowl Combo</h3><p>770 - 1580 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Super Bacon Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Super Bacon Biscuit Combo</h3><p>890 - 1700 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Super Sausage Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Super Sausage Biscuit Combo</h3><p>1170 - 1980 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Hand-Breaded Chicken Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Breaded Chicken Biscuit Combo</h3><p>960 - 1240 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Bacon Egg &amp; Cheese Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Egg &amp; Cheese Biscuit Combo</h3><p>770 - 1580 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Sausage &amp; Egg Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Sausage &amp; Egg Biscuit Combo</h3><p>940 - 1750 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Monster Biscuit® Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Monster Biscuit® Combo</h3><p>1060 - 1870 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Loaded Omelet Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Loaded Omelet Biscuit Combo</h3><p>830 - 1640 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Smoked Sausage, Egg &amp; Cheese Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Smoked Sausage, Egg &amp; Cheese Biscuit Combo</h3><p>950 - 1760 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Country Fried Steak Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Country Fried Steak Biscuit Combo</h3><p>890 - 1700 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Country Ham Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Country Ham Biscuit Combo</h3><p>750 - 1560 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Spicy Hand-Breaded Chicken Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Spicy Hand-Breaded Chicken Biscuit Combo</h3><p>860 - 1670 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Frisco Breakfast Sandwich® with Ham Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Frisco Breakfast Sandwich® with Ham Combo</h3><p>730 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Frisco Breakfast Sandwich® with Bacon Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Frisco Breakfast Sandwich® with Bacon Combo</h3><p>730 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Frisco Breakfast Sandwich® with Sausage Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Frisco Breakfast Sandwich® with Sausage Combo</h3><p>730 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Pork Chop 'N' Gravy Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Pork Chop 'N' Gravy Biscuit Combo</h3><p>790 - 1600 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Biscuit 'N' Gravy™ Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Biscuit 'N' Gravy™ Combo</h3><p>840 - 1650 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Double Biscuit 'N' Gravy Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Biscuit 'N' Gravy Combo</h3><p>1240 - 2050 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Sausage Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Sausage Biscuit Combo</h3><p>870 - 1680 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Smoked Sausage Biscuit Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Smoked Sausage Biscuit Combo</h3><p>840 - 1650 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Homestyle Loaded Breakfast Burrito Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Homestyle Loaded Breakfast Burrito Combo</h3><p>1050 - 1860 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito Combo</h3><p>1170 - 1980 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Biscuit</h3><p>560 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Super Bacon Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Super Bacon Biscuit</h3><p>650 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Super Sausage Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Super Sausage Biscuit</h3><p>930 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Hand-Breaded Chicken Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Breaded Chicken Biscuit</h3><p>610 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Bacon Egg &amp; Cheese Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Egg &amp; Cheese Biscuit</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Sausage &amp; Egg Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Sausage &amp; Egg Biscuit</h3><p>740 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Loaded Omelet Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Loaded Omelet Biscuit</h3><p>590 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Smoked Sausage, Egg &amp; Cheese Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Smoked Sausage, Egg &amp; Cheese Biscuit</h3><p>710 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Country Fried Steak Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Country Fried Steak Biscuit</h3><p>650 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Country Ham Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Country Ham Biscuit</h3><p>410 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Spicy Hand-Breaded Chicken Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Spicy Hand-Breaded Chicken Biscuit</h3><p>620 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Pork Chop 'N' Gravy Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Pork Chop 'N' Gravy Biscuit</h3><p>550 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Biscuit 'N' Gravy™" loading="lazy">
-          <div class="menu-card-copy"><h3>Biscuit 'N' Gravy™</h3><p>500 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Double Biscuit 'N' Gravy" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Biscuit 'N' Gravy</h3><p>1000 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Sausage Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Sausage Biscuit</h3><p>630 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Smoked Sausage Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Smoked Sausage Biscuit</h3><p>600 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Monster Biscuit®" loading="lazy">
-          <div class="menu-card-copy"><h3>Monster Biscuit®</h3><p>820 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Breakfast Burrito" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Burrito</h3><p>690 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Frisco Breakfast Sandwich®" loading="lazy">
-          <div class="menu-card-copy"><h3>Frisco Breakfast Sandwich®</h3><p>490 - 630 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito" loading="lazy">
-          <div class="menu-card-copy"><h3>Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito</h3><p>930 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Homestyle Loaded Breakfast Burrito" loading="lazy">
-          <div class="menu-card-copy"><h3>Homestyle Loaded Breakfast Burrito</h3><p>810 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Hardee Breakfast Platter®" loading="lazy">
-          <div class="menu-card-copy"><h3>Hardee Breakfast Platter®</h3><p>970 - 1170 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Super Star® Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Super Star® Combo</h3><p>1110 - 1830 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Famous Star® Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Famous Star® Combo</h3><p>850 - 1570 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Hardee's Frisco® Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Hardee's Frisco® Combo</h3><p>1320 - 2040 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Hardee's Frisco® Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Hardee's Frisco® Combo</h3><p>1040 - 1760 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Monster Burger® Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Monster Burger® Combo</h3><p>1310 - 2030 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Bacon Cheeseburger Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Bacon Cheeseburger Combo</h3><p>1210 - 1930 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Bacon Cheeseburger Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Cheeseburger Combo</h3><p>940 - 1660 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Mushroom &amp; Swiss Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Mushroom &amp; Swiss Combo</h3><p>1160 - 1880 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Mushroom &amp; Swiss Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Mushroom &amp; Swiss Combo</h3><p>880 - 1600 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Big Cheeseburger Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Big Cheeseburger Combo</h3><p>1090 - 1810 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Big Cheeseburger Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Big Cheeseburger Combo</h3><p>820 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Flame-Grilled Steak Frisco Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Flame-Grilled Steak Frisco Combo</h3><p>970 - 1690 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Jumbo Chili Dog Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Jumbo Chili Dog Combo</h3><p>710 - 1430 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Hand-Breaded Chicken Sandwich Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Breaded Chicken Sandwich Combo</h3><p>860 - 1580 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Nashville Hot Hand-Breaded Chicken Sandwich Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Nashville Hot Hand-Breaded Chicken Sandwich Combo</h3><p>870 - 1590 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="3 Piece - Hand-Breaded Chicken Tenders™ Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>3 Piece - Hand-Breaded Chicken Tenders™ Combo</h3><p>560 - 1280 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="3 Piece - Spicy Hand-Breaded Chicken Tenders Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>3 Piece - Spicy Hand-Breaded Chicken Tenders Combo</h3><p>560 - 1280 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="5 Piece - Hand-Breaded Chicken Tenders™ Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>5 Piece - Hand-Breaded Chicken Tenders™ Combo</h3><p>740 - 1460 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="5 Piece - Spicy Hand-Breaded Chicken Tenders Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>5 Piece - Spicy Hand-Breaded Chicken Tenders Combo</h3><p>740 - 1460 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Big Hot Ham 'N' Cheese™ Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Big Hot Ham 'N' Cheese™ Combo</h3><p>750 - 1470 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Original Hot Ham 'N' Cheese™ Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Original Hot Ham 'N' Cheese™ Combo</h3><p>660 - 1380 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Two Tender Wraps Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Two Tender Wraps Combo</h3><p>860 - 1700 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Original Roast Beef Sandwich Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Original Roast Beef Sandwich Combo</h3><p>830 - 1550 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Big Roast Beef Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Big Roast Beef Combo</h3><p>830 - 1550 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Monster Roast Beef Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Monster Roast Beef Combo</h3><p>1060 - 1780 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Super Star®" loading="lazy">
-          <div class="menu-card-copy"><h3>Super Star®</h3><p>850 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Famous Star®" loading="lazy">
-          <div class="menu-card-copy"><h3>Famous Star®</h3><p>580 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Hardee's Frisco®" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Hardee's Frisco®</h3><p>1020 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Hardee's Frisco®" loading="lazy">
-          <div class="menu-card-copy"><h3>Hardee's Frisco®</h3><p>740 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Monster Burger®" loading="lazy">
-          <div class="menu-card-copy"><h3>Monster Burger®</h3><p>1010 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Bacon Cheeseburger" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Bacon Cheeseburger</h3><p>910 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Bacon Cheeseburger" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Cheeseburger</h3><p>640 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Mushroom &amp; Swiss" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Mushroom &amp; Swiss</h3><p>860 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Mushroom &amp; Swiss" loading="lazy">
-          <div class="menu-card-copy"><h3>Mushroom &amp; Swiss</h3><p>580 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Big Cheeseburger" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Big Cheeseburger</h3><p>790 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Big Cheeseburger" loading="lazy">
-          <div class="menu-card-copy"><h3>Big Cheeseburger</h3><p>520 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Hand-Breaded Chicken Sandwich" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Breaded Chicken Sandwich</h3><p>560 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Nashville Hot Hand-Breaded Chicken Sandwich" loading="lazy">
-          <div class="menu-card-copy"><h3>Nashville Hot Hand-Breaded Chicken Sandwich</h3><p>570 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="BLT Hand-Breaded Chicken Sandwich" loading="lazy">
-          <div class="menu-card-copy"><h3>BLT Hand-Breaded Chicken Sandwich</h3><p>640 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="3 Piece - Hand-Breaded Chicken Tenders™" loading="lazy">
-          <div class="menu-card-copy"><h3>3 Piece - Hand-Breaded Chicken Tenders™</h3><p>260 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="3 Piece - Spicy Hand-Breaded Chicken Tenders" loading="lazy">
-          <div class="menu-card-copy"><h3>3 Piece - Spicy Hand-Breaded Chicken Tenders</h3><p>270 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="5 Piece - Hand-Breaded Chicken Tenders™" loading="lazy">
-          <div class="menu-card-copy"><h3>5 Piece - Hand-Breaded Chicken Tenders™</h3><p>440 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="5 Piece - Spicy Hand-Breaded Chicken Tenders" loading="lazy">
-          <div class="menu-card-copy"><h3>5 Piece - Spicy Hand-Breaded Chicken Tenders</h3><p>460 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Spicy Hand-Breaded Chicken Tenders™ Boxes" loading="lazy">
-          <div class="menu-card-copy"><h3>Spicy Hand-Breaded Chicken Tenders™ Boxes</h3><p>920 - 1380 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Big Hot Ham 'N' Cheese™" loading="lazy">
-          <div class="menu-card-copy"><h3>Big Hot Ham 'N' Cheese™</h3><p>450 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Original Hot Ham 'N' Cheese™" loading="lazy">
-          <div class="menu-card-copy"><h3>Original Hot Ham 'N' Cheese™</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="Hand-Breaded Chicken Tender Wraps" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Breaded Chicken Tender Wraps</h3><p>520 - 680 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="2 for $5 Tender Wraps" loading="lazy">
-          <div class="menu-card-copy"><h3>2 for $5 Tender Wraps</h3><p>520 - 680 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Original Roast Beef Sandwich" loading="lazy">
-          <div class="menu-card-copy"><h3>Original Roast Beef Sandwich</h3><p>380 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Big Roast Beef" loading="lazy">
-          <div class="menu-card-copy"><h3>Big Roast Beef</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Monster Roast Beef" loading="lazy">
-          <div class="menu-card-copy"><h3>Monster Roast Beef</h3><p>760 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Bacon Cheddar Hash Rounds®" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Cheddar Hash Rounds®</h3><p>460 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Sausage Gravy &amp; Cheddar Hash Rounds®" loading="lazy">
-          <div class="menu-card-copy"><h3>Sausage Gravy &amp; Cheddar Hash Rounds®</h3><p>540 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Chili Cheese Curly Fries" loading="lazy">
-          <div class="menu-card-copy"><h3>Chili Cheese Curly Fries</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Bacon Cheddar French Fries" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Cheddar French Fries</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Bacon Cheddar Loaded Crispy Curls" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Cheddar Loaded Crispy Curls</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Beer-Battered Onion Rings" loading="lazy">
-          <div class="menu-card-copy"><h3>Beer-Battered Onion Rings</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Side of Flame-Grilled Steak" loading="lazy">
-          <div class="menu-card-copy"><h3>Side of Flame-Grilled Steak</h3><p>180 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Cup of Chili" loading="lazy">
-          <div class="menu-card-copy"><h3>Cup of Chili</h3><p>200 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Side of Gravy" loading="lazy">
-          <div class="menu-card-copy"><h3>Side of Gravy</h3><p>160 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Side of Cheddar Cheese Sauce" loading="lazy">
-          <div class="menu-card-copy"><h3>Side of Cheddar Cheese Sauce</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Biscuit" loading="lazy">
-          <div class="menu-card-copy"><h3>Biscuit</h3><p>440 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Hash Rounds®" loading="lazy">
-          <div class="menu-card-copy"><h3>Hash Rounds®</h3><p>240 - 490 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fries.jpg" alt="Grits" loading="lazy">
-          <div class="menu-card-copy"><h3>Grits</h3><p>100 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-vanilla-shake.jpg" alt="Hand-Scooped Ice-Cream Shakes™" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Scooped Ice-Cream Shakes™</h3><p>690 - 710 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fried-pie.jpg" alt="Apple Turnover" loading="lazy">
-          <div class="menu-card-copy"><h3>Apple Turnover</h3><p>270 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fried-pie.jpg" alt="2 Apple Turnovers" loading="lazy">
-          <div class="menu-card-copy"><h3>2 Apple Turnovers</h3><p>540 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-fried-pie.jpg" alt="Buddy Fruits® Organic Apple Sauce Pouch" loading="lazy">
-          <div class="menu-card-copy"><h3>Buddy Fruits® Organic Apple Sauce Pouch</h3><p>45 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Hand-Crafted Lemonade" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Crafted Lemonade</h3><p>300 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Hand-Crafted Strawberry Lemonade" loading="lazy">
-          <div class="menu-card-copy"><h3>Hand-Crafted Strawberry Lemonade</h3><p>420 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Fountain Drink" loading="lazy">
-          <div class="menu-card-copy"><h3>Fountain Drink</h3><p>0 - 560 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Teas" loading="lazy">
-          <div class="menu-card-copy"><h3>Teas</h3><p>100 - 230 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Dasani® Bottled Water" loading="lazy">
-          <div class="menu-card-copy"><h3>Dasani® Bottled Water</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Rise and Shine Coffee" loading="lazy">
-          <div class="menu-card-copy"><h3>Rise and Shine Coffee</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Decaf Rise and Shine Coffee" loading="lazy">
-          <div class="menu-card-copy"><h3>Decaf Rise and Shine Coffee</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Simply Orange® Juice" loading="lazy">
-          <div class="menu-card-copy"><h3>Simply Orange® Juice</h3><p>160 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="1% Milk" loading="lazy">
-          <div class="menu-card-copy"><h3>1% Milk</h3><p>90 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-iced-coffee.jpg" alt="Honest Kids® Appley Ever After® Organic Apple Juice" loading="lazy">
-          <div class="menu-card-copy"><h3>Honest Kids® Appley Ever After® Organic Apple Juice</h3><p>35 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="6 Made from Scratch™ Biscuits" loading="lazy">
-          <div class="menu-card-copy"><h3>6 Made from Scratch™ Biscuits</h3><p>2010 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="12 Made from Scratch™ Biscuits" loading="lazy">
-          <div class="menu-card-copy"><h3>12 Made from Scratch™ Biscuits</h3><p>4030 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="$5.99 Original Bag" loading="lazy">
-          <div class="menu-card-copy"><h3>$5.99 Original Bag</h3><p>800 - 1320 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="$6.99 Original Bag" loading="lazy">
-          <div class="menu-card-copy"><h3>$6.99 Original Bag</h3><p>800 - 1320 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="$7.99 Original Bag" loading="lazy">
-          <div class="menu-card-copy"><h3>$7.99 Original Bag</h3><p>1070 - 1890 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Cheeseburger" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Cheeseburger</h3><p>380 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Double Cheeseburger Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Double Cheeseburger Combo</h3><p>660 - 940 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Bacon Double Cheeseburger" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Double Cheeseburger</h3><p>430 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Bacon Double Cheeseburger Combo" loading="lazy">
-          <div class="menu-card-copy"><h3>Bacon Double Cheeseburger Combo</h3><p>710 - 990 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-biscuit.jpg" alt="Hamburger Kid's Meal" loading="lazy">
-          <div class="menu-card-copy"><h3>Hamburger Kid's Meal</h3><p>490 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Cheeseburger Kid's Meal" loading="lazy">
-          <div class="menu-card-copy"><h3>Cheeseburger Kid's Meal</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-tenders.jpg" alt="2-Piece Hand-Breaded Chicken Tenders Kids Meal" loading="lazy">
-          <div class="menu-card-copy"><h3>2-Piece Hand-Breaded Chicken Tenders Kids Meal</h3><p>410 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Grilled Cheese Sandwich Kid's Meal" loading="lazy">
-          <div class="menu-card-copy"><h3>Grilled Cheese Sandwich Kid's Meal</h3><p>570 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>
-        <article class="menu-card extra-menu hidden" role="button" tabindex="0" aria-haspopup="dialog">
-          <img class="food-photo" src="assets/menu-burger.jpg" alt="Hot Dog Kids Meal" loading="lazy">
-          <div class="menu-card-copy"><h3>Hot Dog Kids Meal</h3><p>650 cals</p><strong class="menu-price">View item details</strong></div>
-        </article>      <button class="button button-yellow view-more" id="view-more" type="button" aria-expanded="false">VIEW MORE</button>
-
-      </div>
+<header class="site-header">
+<a aria-label="Hardee's home" class="brand" href="#home"><img alt="Hardee's logo" src="assets/hardees_logo_header_black.png"/></a>
+<nav aria-label="Main navigation" class="navigation" id="main-navigation">
+<a href="#home">HOME</a><a href="#menu">MENU</a><a href="#offers">OFFERS</a><a href="#location">LOCATION</a>
+<button class="login-trigger" data-open-login="" type="button">LOGIN</button>
+</nav>
+<div class="header-actions">
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
+<a class="order-link" href="#menu">ORDER NOW</a>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div aria-hidden="true" class="hero-slideshow">
+<video autoplay="" class="hero-video" loop="" muted="" playsinline="" preload="auto" webkit-playsinline="">
+<source src="assets/burger_making.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="hero-content">
+<p class="eyebrow hero-welcome"><span class="welcome-small">WELCOME TO</span> <span class="welcome-brand">HARDEE'S</span></p><h2 class="hero-slogan">GOOD FOOD.<br/><span>GOOD TIMES.</span></h2>
+<p class="intro">Visit Hardee's at 481 US Highway 1 S in Rockingham, North Carolina.</p>
+<div class="hero-actions"><a class="button button-yellow" href="#menu">VIEW MENU</a><a class="button button-outline" href="#location">FIND US</a></div>
+</div>
 </section>
-
-    <section class="inside-section" id="inside"><div class="section-wrap">
-      <div class="section-heading light-heading"><p class="eyebrow">OUR RESTAURANT</p><h2>A LOOK INSIDE HARDEE'S</h2></div>
-      <div class="gallery-grid gallery-real" id="photo-gallery">
-        <button class="gallery-video" type="button" aria-label="Play burger-making video">
-          <video autoplay muted loop playsinline preload="auto">
-            <source src="assets/burger_making.mp4" type="video/mp4">
-          </video>
-          <span class="gallery-video-label">▶ WATCH THE VIDEO</span>
-        </button>
-        <button class="gallery-photo" type="button" data-gallery-index="0" aria-label="Open photo 1"><img src="assets/hardees-rockingham-store.jpg" alt="Hardee's restaurant exterior in Rockingham" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="1" aria-label="Open photo 2"><img src="assets/hardees-meal.png" alt="Hardee's breakfast burger meal with coffee and crispy bites" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="2" aria-label="Open photo 3"><img src="assets/coffee-bar.png" alt="Coffee bar and drink station inside a restaurant" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="3" aria-label="Open photo 4"><img src="assets/dining-area.png" alt="Restaurant dining booths" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="4" aria-label="Open photo 5"><img src="assets/hardees-exterior.png" alt="Hardee's restaurant exterior" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="5" aria-label="Open photo 6"><img src="assets/look-inside-1.jpeg" alt="Inside Hardee's restaurant view 1" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="6" aria-label="Open photo 7"><img src="assets/look-inside-2.jpeg" alt="Inside Hardee's restaurant view 2" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="7" aria-label="Open photo 8"><img src="assets/look-inside-3.jpeg" alt="Inside Hardee's restaurant view 3" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="8" aria-label="Open photo 9"><img src="assets/look-inside-4.jpeg" alt="Inside Hardee's restaurant view 4" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="9" aria-label="Open photo 10"><img src="assets/look-inside-5.jpeg" alt="Inside Hardee's restaurant view 5" loading="lazy"></button>
-        <button class="gallery-photo" type="button" data-gallery-index="10" aria-label="Open photo 11"><img src="assets/look-inside-6.jpeg" alt="Inside Hardee's restaurant view 6" loading="lazy"></button>
-        
-        
-        
-        
-        
-        
-        
-        
-      </div>
-    </div></section>
-
-    <section class="location-section section-wrap" id="location">
-      <div class="location-heading"><p class="eyebrow">VISIT US</p></div>
-      <div class="address-card"><h2>Hardee's <span>481 US Highway 1 S</span></h2><p><strong>Rockingham, NC 28379</strong></p></div>
-      <div class="map-frame"><iframe title="Map to Hardee's in Rockingham" src="https://maps.google.com/maps?q=Hardee%27s%2C%20481%20US%20Highway%201%20S%2C%20Rockingham%2C%20NC%2028379&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-      <p class="location-description">For a delicious breakfast, lunch or dinner, stop by our Rockingham location.</p>
-      <div class="location-actions"><a class="button button-yellow" target="_blank" rel="noopener" href="https://maps.google.com/maps?q=Hardee%27s,%20481%20US%20Highway%201%20S,%20Rockingham%2028379">GET DIRECTIONS</a><a class="phone-link" href="tel:+19108177055">📞 (910) 817-7055</a></div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img src="assets/hardees_logo_footer_white.png" alt="Hardee's logo"><p>Hand-crafted food, made for you.</p></div>
-    <div class="footer-column"><h3>COMPANY</h3><a href="https://www.hardees.com/about-us" target="_blank" rel="noopener">About Us</a><a href="https://www.hardees.com/locations" target="_blank" rel="noopener">Location</a><a href="https://www.hardees.com/contact-us" target="_blank" rel="noopener">Contact</a></div>
-    <div class="footer-column"><h3>QUICK LINKS</h3><a href="#menu">Menu</a><a href="#offers">Offers</a><a href="#location">Location</a><a href="#login" data-open-login>Login</a></div>
-  </div><small>© 2026 Hardee's 481 US Hwy 1 S, Rockingham, NC 28379</small></footer>
-
-
-  <div class="modal-backdrop" id="admin-item-modal" aria-hidden="true">
-    <section class="login-modal admin-editor" role="dialog" aria-modal="true" aria-labelledby="admin-item-heading">
-      <button class="modal-close admin-editor-close" type="button" aria-label="Close editor">×</button>
-      <p class="eyebrow">ADMIN CONTROL</p><h2 id="admin-item-heading">ADD MENU ITEM</h2>
-      <form id="admin-item-form">
-        <label for="admin-item-name">Item name</label><input id="admin-item-name" required maxlength="90" placeholder="Enter item name">
-        <label for="admin-item-description">Description</label><input id="admin-item-description" maxlength="180" placeholder="Short description">
-        <label for="admin-item-price">Price / details</label><input id="admin-item-price" maxlength="40" placeholder="e.g. $5.99">
-        <label for="admin-item-category">Category</label><select id="admin-item-category" required></select>
-        <label for="admin-item-image">Image path</label><input id="admin-item-image" placeholder="assets/menu-burger.jpg">
-        <button class="button button-yellow" type="submit">SAVE ITEM</button>
-      </form>
-    </section>
-  </div>
-  <div class="menu-item-backdrop" id="menu-item-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-item-title">
-    <section class="menu-item-modal">
-      <button class="menu-item-close" type="button" aria-label="Close item details">×</button>
-      <img class="menu-item-image" id="menu-item-image" src="" alt="">
-      <div class="menu-item-details"><p class="eyebrow">MADE FRESH FOR YOU</p><h2 id="menu-item-title"></h2><p id="menu-item-description"></p><strong class="menu-item-price" id="menu-item-price"></strong></div>
-    </section>
-  </div>
-  <div class="modal-backdrop" id="login-modal" aria-hidden="true"><section class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title"><button class="modal-close" type="button" aria-label="Close login">×</button><p class="eyebrow">TEAM ACCESS</p><h2 id="login-title">LOGIN</h2><form id="login-form"><label for="login-role">Login as</label><select id="login-role" required><option value="staff">Staff</option><option value="admin">Admin</option></select><label for="login-email">Email / Username</label><input id="login-email" type="text" placeholder="Enter your email or username" required><label for="login-password">Password</label><input id="login-password" type="password" placeholder="Enter your password" required><button class="button button-yellow" type="submit">LOGIN</button><p class="login-note">Demo only: Admin username <b>admin</b>, password <b>admin123</b>. Connect secure server-side authentication before publishing.</p></form></section></div>
-  <div class="lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
-    <button class="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
-    <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous photo">‹</button>
-    <img class="lightbox-image" id="lightbox-image" src="" alt="">\n    <video class="lightbox-video" id="lightbox-video" controls playsinline preload="auto" hidden><source src="assets/burger_making.mp4" type="video/mp4"></video>
-    <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next photo">›</button>
-    <p class="lightbox-count" id="lightbox-count"></p>
-  </div>
-  <div class="video-ad-backdrop" id="video-ad-popup" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Hardee's video advertisement">
-    <section class="video-ad-dialog">
-      <video id="video-ad-player" autoplay muted playsinline preload="auto">
-        <source src="assets/hardees_ad_video.mp4" type="video/mp4">
-      </video>
-      <button class="video-ad-sound" id="video-ad-sound" type="button" aria-label="Turn sound on" aria-pressed="false">
-        <svg class="speaker-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
-          <path class="speaker-wave" d="M16 9a5 5 0 0 1 0 6M18.5 6.5a8.5 8.5 0 0 1 0 11"></path>
-          <path class="speaker-muted" d="m16 9 5 6m0-6-5 6"></path>
-        </svg>
-      </button>
-      <button class="video-ad-close" id="video-ad-close" type="button" aria-label="Close advertisement">×</button>
-    </section>
-  </div>
-  <script src="script.js"></script>
+<section aria-labelledby="timings-title" class="timings-strip">
+<div class="timings-title-card"><p class="eyebrow">PLAN YOUR VISIT</p><h2 id="timings-title">TIMINGS</h2><span aria-hidden="true" class="timing-clock">◷</span></div>
+<div class="timings-details"><strong>Monday – Sunday</strong><span>5:30 AM – 10:00 PM</span><small>Breakfast served until approximately <b>10:30 AM</b>.</small></div>
+</section>
+<section class="menu-section section-wrap" id="menu">
+<article aria-label="Explore menu and offers" class="offers-card" id="offers" role="button" tabindex="0"><div><p class="eyebrow">SPECIALS &amp; SAVINGS</p><h3>GOOD DEALS. GREAT TASTE.</h3><p>Tap to explore the menu and available offers.</p></div><span class="offers-mark">OFFERS <span aria-hidden="true">↘</span></span></article>
+<div class="section-heading"><p class="eyebrow">MADE FRESH FOR YOU</p><h2>LATEST CRAVINGS</h2><p>Enjoy hand-crafted breakfast, burgers, chicken and delicious sides.</p></div>
+<p class="menu-price-note">Sample prices are shown for featured items; additional items display calories. Actual prices may vary by location.</p>
+<div class="menu-category-control">
+<button aria-controls="menu-category-panel" aria-expanded="false" class="category-menu-toggle" id="category-menu-toggle" type="button">☰ MENU</button>
+<div class="menu-category-panel hidden" id="menu-category-panel">
+<p class="category-panel-title">EXPLORE OUR MENU</p>
+<div class="menu-category-list" id="menu-category-list"></div>
+</div>
+</div>
+<div class="admin-menu-toolbar hidden" id="admin-menu-toolbar">
+<div><strong>ADMIN MENU MANAGEMENT</strong><small>Add, edit or remove menu items</small></div>
+<button class="admin-add-button" id="admin-add-item" type="button">＋ ADD ITEM</button>
+</div>
+<div class="menu-grid" id="menu-grid">
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Famous Star Burger" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Famous Star Burger</h3><p>Classic charbroiled burger with fresh toppings.</p><strong class="menu-price">$5.49</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Bacon Beast Burger" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Beast Burger</h3><p>A stacked burger with crispy bacon and cheese.</p><strong class="menu-price">$6.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Natural-Cut French Fries" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Natural-Cut French Fries</h3><p>Golden, lightly salted fries.</p><strong class="menu-price">$2.49</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Coca-Cola" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Coca-Cola</h3><p>Chilled, fizzy cola served over ice.</p><strong class="menu-price">$1.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Bread Omelet" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bread Omelet</h3><p>Fluffy egg and cheese breakfast sandwich.</p><strong class="menu-price">$4.49</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Fresh Brewed Coffee" class="food-photo" loading="lazy" src="assets/menu-coffee.jpg"/>
+<div class="menu-card-copy"><h3>Fresh Brewed Coffee</h3><p>Hot coffee, freshly brewed.</p><strong class="menu-price">$1.79</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Iced Coffee" class="food-photo" loading="lazy" src="assets/menu-coffee.jpg"/>
+<div class="menu-card-copy"><h3>Iced Coffee</h3><p>Smooth coffee served chilled over ice.</p><strong class="menu-price">$2.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Ice Cream Shake" class="food-photo" loading="lazy" src="assets/menu-vanilla-shake.jpg"/>
+<div class="menu-card-copy"><h3>Ice Cream Shake</h3><p>Creamy vanilla shake topped with whipped cream.</p><strong class="menu-price">$3.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Crispy Chicken Tenders" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Crispy Chicken Tenders</h3><p>Golden, crunchy chicken tenders.</p><strong class="menu-price">$5.49</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Fried Apple Pie" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>Fried Apple Pie</h3><p>Flaky pastry with warm apple filling.</p><strong class="menu-price">$1.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Crispy Curls" class="food-photo" loading="lazy" src="assets/menu-crispy-curls.jpg"/>
+<div class="menu-card-copy"><h3>Crispy Curls</h3><p>Seasoned, crispy curly potato fries.</p><strong class="menu-price">$2.79</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Crispy Chicken Sandwich" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>Crispy Chicken Sandwich</h3><p>Crispy chicken with lettuce on a soft bun.</p><strong class="menu-price">$5.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Cinnamon Roll" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>Cinnamon Roll</h3><p>Warm cinnamon pastry with sweet icing.</p><strong class="menu-price">$2.49</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Hash Rounds" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Hash Rounds</h3><p>Crispy golden breakfast potato bites.</p><strong class="menu-price">$1.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Chocolate Shake" class="food-photo" loading="lazy" src="assets/menu-vanilla-shake.jpg"/>
+<div class="menu-card-copy"><h3>Chocolate Shake</h3><p>Rich chocolate shake, served chilled.</p><strong class="menu-price">$3.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card" role="button" tabindex="0">
+<img alt="Breakfast Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Breakfast Biscuit</h3><p>Fluffy biscuit with egg and sausage.</p><strong class="menu-price">$3.99</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Biscuit Combo</h3><p>800 - 1610 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Breakfast Bowl" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Bowl</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="S'mores Iced Coffee" class="food-photo" loading="lazy" src="assets/menu-coffee.jpg"/>
+<div class="menu-card-copy"><h3>S'mores Iced Coffee</h3><p>270 - 430 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="S'mores Fried Pie" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>S'mores Fried Pie</h3><p>380 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bubba Wallace Diecast 1/64 Collectible Car" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Bubba Wallace Diecast 1/64 Collectible Car</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="12 Bacon, Egg &amp; Cheese Biscuits" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>12 Bacon, Egg &amp; Cheese Biscuits</h3><p>6040 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="12 Sausage Biscuits" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>12 Sausage Biscuits</h3><p>6310 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Frisco" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Frisco</h3><p>670 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="S’mores Hand-Scooped Ice Cream Shake™" class="food-photo" loading="lazy" src="assets/menu-vanilla-shake.jpg"/>
+<div class="menu-card-copy"><h3>S’mores Hand-Scooped Ice Cream Shake™</h3><p>910 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Breaded Chicken Tenders™ Boxes" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Breaded Chicken Tenders™ Boxes</h3><p>880 - 1760 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="BLT Hand-Breaded Chicken Sandwich Combo" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>BLT Hand-Breaded Chicken Sandwich Combo</h3><p>940 - 1660 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Jumbo Chili Dog" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Jumbo Chili Dog</h3><p>410 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Chili Cheese Fries" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Chili Cheese Fries</h3><p>400 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Breakfast Burrito Combo" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Burrito Combo</h3><p>930 - 1740 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Breakfast Bowl Combo" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Bowl Combo</h3><p>770 - 1580 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Super Bacon Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Super Bacon Biscuit Combo</h3><p>890 - 1700 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Super Sausage Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Super Sausage Biscuit Combo</h3><p>1170 - 1980 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Breaded Chicken Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Breaded Chicken Biscuit Combo</h3><p>960 - 1240 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Egg &amp; Cheese Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Egg &amp; Cheese Biscuit Combo</h3><p>770 - 1580 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Sausage &amp; Egg Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Sausage &amp; Egg Biscuit Combo</h3><p>940 - 1750 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Monster Biscuit® Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Monster Biscuit® Combo</h3><p>1060 - 1870 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Loaded Omelet Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Loaded Omelet Biscuit Combo</h3><p>830 - 1640 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Smoked Sausage, Egg &amp; Cheese Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Smoked Sausage, Egg &amp; Cheese Biscuit Combo</h3><p>950 - 1760 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Country Fried Steak Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Country Fried Steak Biscuit Combo</h3><p>890 - 1700 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Country Ham Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Country Ham Biscuit Combo</h3><p>750 - 1560 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Spicy Hand-Breaded Chicken Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Spicy Hand-Breaded Chicken Biscuit Combo</h3><p>860 - 1670 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Frisco Breakfast Sandwich® with Ham Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Frisco Breakfast Sandwich® with Ham Combo</h3><p>730 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Frisco Breakfast Sandwich® with Bacon Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Frisco Breakfast Sandwich® with Bacon Combo</h3><p>730 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Frisco Breakfast Sandwich® with Sausage Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Frisco Breakfast Sandwich® with Sausage Combo</h3><p>730 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Pork Chop 'N' Gravy Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Pork Chop 'N' Gravy Biscuit Combo</h3><p>790 - 1600 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Biscuit 'N' Gravy™ Combo" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Biscuit 'N' Gravy™ Combo</h3><p>840 - 1650 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Biscuit 'N' Gravy Combo" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Double Biscuit 'N' Gravy Combo</h3><p>1240 - 2050 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Sausage Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Sausage Biscuit Combo</h3><p>870 - 1680 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Smoked Sausage Biscuit Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Smoked Sausage Biscuit Combo</h3><p>840 - 1650 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Homestyle Loaded Breakfast Burrito Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Homestyle Loaded Breakfast Burrito Combo</h3><p>1050 - 1860 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito Combo</h3><p>1170 - 1980 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Biscuit" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Biscuit</h3><p>560 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Super Bacon Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Super Bacon Biscuit</h3><p>650 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Super Sausage Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Super Sausage Biscuit</h3><p>930 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Breaded Chicken Biscuit" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Breaded Chicken Biscuit</h3><p>610 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Egg &amp; Cheese Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Egg &amp; Cheese Biscuit</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Sausage &amp; Egg Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Sausage &amp; Egg Biscuit</h3><p>740 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Loaded Omelet Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Loaded Omelet Biscuit</h3><p>590 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Smoked Sausage, Egg &amp; Cheese Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Smoked Sausage, Egg &amp; Cheese Biscuit</h3><p>710 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Country Fried Steak Biscuit" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Country Fried Steak Biscuit</h3><p>650 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Country Ham Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Country Ham Biscuit</h3><p>410 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Spicy Hand-Breaded Chicken Biscuit" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Spicy Hand-Breaded Chicken Biscuit</h3><p>620 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Pork Chop 'N' Gravy Biscuit" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Pork Chop 'N' Gravy Biscuit</h3><p>550 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Biscuit 'N' Gravy™" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Biscuit 'N' Gravy™</h3><p>500 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Biscuit 'N' Gravy" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Double Biscuit 'N' Gravy</h3><p>1000 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Sausage Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Sausage Biscuit</h3><p>630 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Smoked Sausage Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Smoked Sausage Biscuit</h3><p>600 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Monster Biscuit®" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Monster Biscuit®</h3><p>820 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Breakfast Burrito" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Breakfast Burrito</h3><p>690 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Frisco Breakfast Sandwich®" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Frisco Breakfast Sandwich®</h3><p>490 - 630 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Homestyle Sausage, Egg &amp; Cheese Breakfast Burrito</h3><p>930 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Homestyle Loaded Breakfast Burrito" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Homestyle Loaded Breakfast Burrito</h3><p>810 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hardee Breakfast Platter®" class="food-photo" loading="lazy" src="assets/menu-coffee.jpg"/>
+<div class="menu-card-copy"><h3>Hardee Breakfast Platter®</h3><p>970 - 1170 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Super Star® Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Super Star® Combo</h3><p>1110 - 1830 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Famous Star® Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Famous Star® Combo</h3><p>850 - 1570 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Hardee's Frisco® Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Hardee's Frisco® Combo</h3><p>1320 - 2040 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hardee's Frisco® Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Hardee's Frisco® Combo</h3><p>1040 - 1760 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Monster Burger® Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Monster Burger® Combo</h3><p>1310 - 2030 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Bacon Cheeseburger Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Double Bacon Cheeseburger Combo</h3><p>1210 - 1930 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Cheeseburger Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Cheeseburger Combo</h3><p>940 - 1660 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Mushroom &amp; Swiss Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Mushroom &amp; Swiss Combo</h3><p>1160 - 1880 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Mushroom &amp; Swiss Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Mushroom &amp; Swiss Combo</h3><p>880 - 1600 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Big Cheeseburger Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Big Cheeseburger Combo</h3><p>1090 - 1810 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Big Cheeseburger Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Big Cheeseburger Combo</h3><p>820 - 1540 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Flame-Grilled Steak Frisco Combo" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Flame-Grilled Steak Frisco Combo</h3><p>970 - 1690 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Jumbo Chili Dog Combo" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Jumbo Chili Dog Combo</h3><p>710 - 1430 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Breaded Chicken Sandwich Combo" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Breaded Chicken Sandwich Combo</h3><p>860 - 1580 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Nashville Hot Hand-Breaded Chicken Sandwich Combo" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>Nashville Hot Hand-Breaded Chicken Sandwich Combo</h3><p>870 - 1590 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="3 Piece - Hand-Breaded Chicken Tenders™ Combo" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>3 Piece - Hand-Breaded Chicken Tenders™ Combo</h3><p>560 - 1280 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="3 Piece - Spicy Hand-Breaded Chicken Tenders Combo" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>3 Piece - Spicy Hand-Breaded Chicken Tenders Combo</h3><p>560 - 1280 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="5 Piece - Hand-Breaded Chicken Tenders™ Combo" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>5 Piece - Hand-Breaded Chicken Tenders™ Combo</h3><p>740 - 1460 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="5 Piece - Spicy Hand-Breaded Chicken Tenders Combo" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>5 Piece - Spicy Hand-Breaded Chicken Tenders Combo</h3><p>740 - 1460 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Big Hot Ham 'N' Cheese™ Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Big Hot Ham 'N' Cheese™ Combo</h3><p>750 - 1470 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Original Hot Ham 'N' Cheese™ Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Original Hot Ham 'N' Cheese™ Combo</h3><p>660 - 1380 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Two Tender Wraps Combo" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Two Tender Wraps Combo</h3><p>860 - 1700 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Original Roast Beef Sandwich Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Original Roast Beef Sandwich Combo</h3><p>830 - 1550 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Big Roast Beef Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Big Roast Beef Combo</h3><p>830 - 1550 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Monster Roast Beef Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Monster Roast Beef Combo</h3><p>1060 - 1780 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Super Star®" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Super Star®</h3><p>850 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Famous Star®" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Famous Star®</h3><p>580 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Hardee's Frisco®" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Hardee's Frisco®</h3><p>1020 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hardee's Frisco®" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Hardee's Frisco®</h3><p>740 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Monster Burger®" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Monster Burger®</h3><p>1010 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Bacon Cheeseburger" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Double Bacon Cheeseburger</h3><p>910 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Cheeseburger" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Cheeseburger</h3><p>640 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Mushroom &amp; Swiss" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Mushroom &amp; Swiss</h3><p>860 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Mushroom &amp; Swiss" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Mushroom &amp; Swiss</h3><p>580 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Big Cheeseburger" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Big Cheeseburger</h3><p>790 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Big Cheeseburger" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Big Cheeseburger</h3><p>520 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Breaded Chicken Sandwich" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Breaded Chicken Sandwich</h3><p>560 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Nashville Hot Hand-Breaded Chicken Sandwich" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>Nashville Hot Hand-Breaded Chicken Sandwich</h3><p>570 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="BLT Hand-Breaded Chicken Sandwich" class="food-photo" loading="lazy" src="assets/menu-chicken-sandwich.jpg"/>
+<div class="menu-card-copy"><h3>BLT Hand-Breaded Chicken Sandwich</h3><p>640 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="3 Piece - Hand-Breaded Chicken Tenders™" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>3 Piece - Hand-Breaded Chicken Tenders™</h3><p>260 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="3 Piece - Spicy Hand-Breaded Chicken Tenders" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>3 Piece - Spicy Hand-Breaded Chicken Tenders</h3><p>270 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="5 Piece - Hand-Breaded Chicken Tenders™" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>5 Piece - Hand-Breaded Chicken Tenders™</h3><p>440 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="5 Piece - Spicy Hand-Breaded Chicken Tenders" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>5 Piece - Spicy Hand-Breaded Chicken Tenders</h3><p>460 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Spicy Hand-Breaded Chicken Tenders™ Boxes" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Spicy Hand-Breaded Chicken Tenders™ Boxes</h3><p>920 - 1380 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Big Hot Ham 'N' Cheese™" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Big Hot Ham 'N' Cheese™</h3><p>450 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Original Hot Ham 'N' Cheese™" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Original Hot Ham 'N' Cheese™</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Breaded Chicken Tender Wraps" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Breaded Chicken Tender Wraps</h3><p>520 - 680 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="2 for $5 Tender Wraps" class="food-photo" loading="lazy" src="assets/menu-tenders.jpg"/>
+<div class="menu-card-copy"><h3>2 for $5 Tender Wraps</h3><p>520 - 680 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Original Roast Beef Sandwich" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Original Roast Beef Sandwich</h3><p>380 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Big Roast Beef" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Big Roast Beef</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Monster Roast Beef" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Monster Roast Beef</h3><p>760 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Cheddar Hash Rounds®" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Cheddar Hash Rounds®</h3><p>460 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Sausage Gravy &amp; Cheddar Hash Rounds®" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Sausage Gravy &amp; Cheddar Hash Rounds®</h3><p>540 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Chili Cheese Curly Fries" class="food-photo" loading="lazy" src="assets/menu-crispy-curls.jpg"/>
+<div class="menu-card-copy"><h3>Chili Cheese Curly Fries</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Cheddar French Fries" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Cheddar French Fries</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Cheddar Loaded Crispy Curls" class="food-photo" loading="lazy" src="assets/menu-crispy-curls.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Cheddar Loaded Crispy Curls</h3><p>360 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Beer-Battered Onion Rings" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Beer-Battered Onion Rings</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Side of Flame-Grilled Steak" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Side of Flame-Grilled Steak</h3><p>180 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Cup of Chili" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Cup of Chili</h3><p>200 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Side of Gravy" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Side of Gravy</h3><p>160 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Side of Cheddar Cheese Sauce" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Side of Cheddar Cheese Sauce</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Biscuit" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Biscuit</h3><p>440 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hash Rounds®" class="food-photo" loading="lazy" src="assets/menu-fries.jpg"/>
+<div class="menu-card-copy"><h3>Hash Rounds®</h3><p>240 - 490 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Grits" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Grits</h3><p>100 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Scooped Ice-Cream Shakes™" class="food-photo" loading="lazy" src="assets/menu-vanilla-shake.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Scooped Ice-Cream Shakes™</h3><p>690 - 710 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Apple Turnover" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>Apple Turnover</h3><p>270 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="2 Apple Turnovers" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>2 Apple Turnovers</h3><p>540 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Buddy Fruits® Organic Apple Sauce Pouch" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>Buddy Fruits® Organic Apple Sauce Pouch</h3><p>45 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Crafted Lemonade" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Crafted Lemonade</h3><p>300 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hand-Crafted Strawberry Lemonade" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Hand-Crafted Strawberry Lemonade</h3><p>420 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Fountain Drink" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Fountain Drink</h3><p>0 - 560 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Teas" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Teas</h3><p>100 - 230 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Dasani® Bottled Water" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Dasani® Bottled Water</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Rise and Shine Coffee" class="food-photo" loading="lazy" src="assets/menu-coffee.jpg"/>
+<div class="menu-card-copy"><h3>Rise and Shine Coffee</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Decaf Rise and Shine Coffee" class="food-photo" loading="lazy" src="assets/menu-coffee.jpg"/>
+<div class="menu-card-copy"><h3>Decaf Rise and Shine Coffee</h3><p>0 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Simply Orange® Juice" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Simply Orange® Juice</h3><p>160 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="1% Milk" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>1% Milk</h3><p>90 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Honest Kids® Appley Ever After® Organic Apple Juice" class="food-photo" loading="lazy" src="assets/menu-coke.jpg"/>
+<div class="menu-card-copy"><h3>Honest Kids® Appley Ever After® Organic Apple Juice</h3><p>35 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="6 Made from Scratch™ Biscuits" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>6 Made from Scratch™ Biscuits</h3><p>2010 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="12 Made from Scratch™ Biscuits" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>12 Made from Scratch™ Biscuits</h3><p>4030 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="$5.99 Original Bag" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>$5.99 Original Bag</h3><p>800 - 1320 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="$6.99 Original Bag" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>$6.99 Original Bag</h3><p>800 - 1320 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="$7.99 Original Bag" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>$7.99 Original Bag</h3><p>1070 - 1890 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Cheeseburger" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Cheeseburger</h3><p>380 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Double Cheeseburger Combo" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Double Cheeseburger Combo</h3><p>660 - 940 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Double Cheeseburger" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Double Cheeseburger</h3><p>430 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Bacon Double Cheeseburger Combo" class="food-photo" loading="lazy" src="assets/menu-biscuit.jpg"/>
+<div class="menu-card-copy"><h3>Bacon Double Cheeseburger Combo</h3><p>710 - 990 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hamburger Kid's Meal" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Hamburger Kid's Meal</h3><p>490 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Cheeseburger Kid's Meal" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Cheeseburger Kid's Meal</h3><p>530 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="2-Piece Hand-Breaded Chicken Tenders Kids Meal" class="food-photo" loading="lazy" src="assets/menu-fried-pie.jpg"/>
+<div class="menu-card-copy"><h3>2-Piece Hand-Breaded Chicken Tenders Kids Meal</h3><p>410 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Grilled Cheese Sandwich Kid's Meal" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Grilled Cheese Sandwich Kid's Meal</h3><p>570 cals</p><strong class="menu-price">View item details</strong></div>
+</article>
+<article aria-haspopup="dialog" class="menu-card extra-menu hidden" role="button" tabindex="0">
+<img alt="Hot Dog Kids Meal" class="food-photo" loading="lazy" src="assets/menu-burger.jpg"/>
+<div class="menu-card-copy"><h3>Hot Dog Kids Meal</h3><p>650 cals</p><strong class="menu-price">View item details</strong></div>
+</article> <button aria-expanded="false" class="button button-yellow view-more" id="view-more" type="button">VIEW MORE</button>
+</div>
+</section>
+<section class="inside-section" id="inside"><div class="section-wrap">
+<div class="section-heading light-heading"><p class="eyebrow">OUR RESTAURANT</p><h2>A LOOK INSIDE HARDEE'S</h2></div>
+<div class="gallery-grid gallery-real" id="photo-gallery">
+<button aria-label="Play burger-making video" class="gallery-video" type="button">
+<video autoplay="" loop="" muted="" playsinline="" preload="auto">
+<source src="assets/burger_making.mp4" type="video/mp4"/>
+</video>
+</button>
+<button aria-label="Open photo 1" class="gallery-photo" data-gallery-index="0" type="button"><img alt="Hardee's restaurant exterior in Rockingham" loading="lazy" src="assets/hardees-rockingham-store.jpg"/></button>
+<button aria-label="Open photo 2" class="gallery-photo" data-gallery-index="1" type="button"><img alt="Hardee's breakfast burger meal with coffee and crispy bites" loading="lazy" src="assets/hardees-meal.png"/></button>
+<button aria-label="Open photo 3" class="gallery-photo" data-gallery-index="2" type="button"><img alt="Coffee bar and drink station inside a restaurant" loading="lazy" src="assets/coffee-bar.png"/></button>
+<button aria-label="Open photo 4" class="gallery-photo" data-gallery-index="3" type="button"><img alt="Restaurant dining booths" loading="lazy" src="assets/dining-area.png"/></button>
+<button aria-label="Open photo 5" class="gallery-photo" data-gallery-index="4" type="button"><img alt="Hardee's restaurant exterior" loading="lazy" src="assets/hardees-exterior.png"/></button>
+<button aria-label="Open photo 6" class="gallery-photo" data-gallery-index="5" type="button"><img alt="Inside Hardee's restaurant view 1" loading="lazy" src="assets/look-inside-1.jpeg"/></button>
+<button aria-label="Open photo 7" class="gallery-photo" data-gallery-index="6" type="button"><img alt="Inside Hardee's restaurant view 2" loading="lazy" src="assets/look-inside-2.jpeg"/></button>
+<button aria-label="Open photo 8" class="gallery-photo" data-gallery-index="7" type="button"><img alt="Inside Hardee's restaurant view 3" loading="lazy" src="assets/look-inside-3.jpeg"/></button>
+<button aria-label="Open photo 9" class="gallery-photo" data-gallery-index="8" type="button"><img alt="Inside Hardee's restaurant view 4" loading="lazy" src="assets/look-inside-4.jpeg"/></button>
+<button aria-label="Open photo 10" class="gallery-photo" data-gallery-index="9" type="button"><img alt="Inside Hardee's restaurant view 5" loading="lazy" src="assets/look-inside-5.jpeg"/></button>
+<button aria-label="Open photo 11" class="gallery-photo" data-gallery-index="10" type="button"><img alt="Inside Hardee's restaurant view 6" loading="lazy" src="assets/look-inside-6.jpeg"/></button>
+</div>
+</div></section>
+<section class="location-section section-wrap" id="location">
+<div class="location-heading"><p class="eyebrow">VISIT US</p></div>
+<div class="address-card"><h2>Hardee's <span>481 US Highway 1 S</span></h2><p><strong>Rockingham, NC 28379</strong></p></div>
+<div class="map-frame"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Hardee%27s%2C%20481%20US%20Highway%201%20S%2C%20Rockingham%2C%20NC%2028379&amp;output=embed" title="Map to Hardee's in Rockingham"></iframe></div>
+<p class="location-description">For a delicious breakfast, lunch or dinner, stop by our Rockingham location.</p>
+<div class="location-actions"><a class="button button-yellow" href="https://maps.google.com/maps?q=Hardee%27s,%20481%20US%20Highway%201%20S,%20Rockingham%2028379" rel="noopener" target="_blank">GET DIRECTIONS</a><a class="phone-link" href="tel:+19108177055">📞 (910) 817-7055</a></div>
+</section>
+</main>
+<footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img alt="Hardee's logo" src="assets/hardees_logo_footer_white.png"/><p>Hand-crafted food, made for you.</p></div>
+<div class="footer-column"><h3>COMPANY</h3><a href="https://www.hardees.com/about-us" rel="noopener" target="_blank">About Us</a><a href="https://www.hardees.com/locations" rel="noopener" target="_blank">Location</a><a href="https://www.hardees.com/contact-us" rel="noopener" target="_blank">Contact</a></div>
+<div class="footer-column"><h3>QUICK LINKS</h3><a href="#menu">Menu</a><a href="#offers">Offers</a><a href="#location">Location</a><a data-open-login="" href="#login">Login</a></div>
+</div><small>© 2026 Hardee's 481 US Hwy 1 S, Rockingham, NC 28379</small></footer>
+<div aria-hidden="true" class="modal-backdrop" id="admin-item-modal">
+<section aria-labelledby="admin-item-heading" aria-modal="true" class="login-modal admin-editor" role="dialog">
+<button aria-label="Close editor" class="modal-close admin-editor-close" type="button">×</button>
+<p class="eyebrow">ADMIN CONTROL</p><h2 id="admin-item-heading">ADD MENU ITEM</h2>
+<form id="admin-item-form">
+<label for="admin-item-name">Item name</label><input id="admin-item-name" maxlength="90" placeholder="Enter item name" required=""/>
+<label for="admin-item-description">Description</label><input id="admin-item-description" maxlength="180" placeholder="Short description"/>
+<label for="admin-item-price">Price / details</label><input id="admin-item-price" maxlength="40" placeholder="e.g. $5.99"/>
+<label for="admin-item-category">Category</label><select id="admin-item-category" required=""></select>
+<label for="admin-item-image">Image path</label><input id="admin-item-image" placeholder="assets/menu-burger.jpg"/>
+<button class="button button-yellow" type="submit">SAVE ITEM</button>
+</form>
+</section>
+</div>
+<div aria-hidden="true" aria-labelledby="menu-item-title" aria-modal="true" class="menu-item-backdrop" id="menu-item-modal" role="dialog">
+<section class="menu-item-modal">
+<button aria-label="Close item details" class="menu-item-close" type="button">×</button>
+<img alt="" class="menu-item-image" id="menu-item-image" src=""/>
+<div class="menu-item-details"><p class="eyebrow">MADE FRESH FOR YOU</p><h2 id="menu-item-title"></h2><p id="menu-item-description"></p><strong class="menu-item-price" id="menu-item-price"></strong></div>
+</section>
+</div>
+<div aria-hidden="true" class="modal-backdrop" id="login-modal"><section aria-labelledby="login-title" aria-modal="true" class="login-modal" role="dialog"><button aria-label="Close login" class="modal-close" type="button">×</button><p class="eyebrow">TEAM ACCESS</p><h2 id="login-title">LOGIN</h2><form id="login-form"><label for="login-role">Login as</label><select id="login-role" required=""><option value="staff">Staff</option><option value="admin">Admin</option></select><label for="login-email">Email / Username</label><input id="login-email" placeholder="Enter your email or username" required="" type="text"/><label for="login-password">Password</label><input id="login-password" placeholder="Enter your password" required="" type="password"/><button class="button button-yellow" type="submit">LOGIN</button><p class="login-note">Demo only: Admin username <b>admin</b>, password <b>admin123</b>. Connect secure server-side authentication before publishing.</p></form></section></div>
+<div aria-hidden="true" aria-label="Photo viewer" aria-modal="true" class="lightbox" id="gallery-lightbox" role="dialog">
+<button aria-label="Close photo viewer" class="lightbox-close" type="button">×</button>
+<button aria-label="Previous photo" class="lightbox-arrow lightbox-prev" type="button">‹</button>
+<img alt="" class="lightbox-image" id="lightbox-image" src=""/>\n    <video class="lightbox-video" controls="" hidden="" id="lightbox-video" playsinline="" preload="auto"><source src="assets/burger_making.mp4" type="video/mp4"/></video>
+<button aria-label="Next photo" class="lightbox-arrow lightbox-next" type="button">›</button>
+<p class="lightbox-count" id="lightbox-count"></p>
+</div>
+<div aria-hidden="true" aria-label="Hardee's video advertisement" aria-modal="true" class="video-ad-backdrop" id="video-ad-popup" role="dialog">
+<section class="video-ad-dialog">
+<video autoplay="" id="video-ad-player" muted="" playsinline="" preload="auto">
+<source src="assets/hardees_ad_video.mp4" type="video/mp4"/>
+</video>
+<button aria-label="Turn sound on" aria-pressed="false" class="video-ad-sound" id="video-ad-sound" type="button">
+<svg aria-hidden="true" class="speaker-icon" viewbox="0 0 24 24">
+<path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+<path class="speaker-wave" d="M16 9a5 5 0 0 1 0 6M18.5 6.5a8.5 8.5 0 0 1 0 11"></path>
+<path class="speaker-muted" d="m16 9 5 6m0-6-5 6"></path>
+</svg>
+</button>
+<button aria-label="Close advertisement" class="video-ad-close" id="video-ad-close" type="button">×</button>
+</section>
+</div>
+<script src="script.js"></script>
 </body></html>

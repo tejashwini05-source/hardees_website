@@ -541,3 +541,23 @@ body.modal-open{overflow:hidden;}
   }
   .menu-grid { margin-top: 8px; }
 }
+
+/* Final menu interaction polish */
+.view-more {
+  min-height: 29px !important;
+  padding: 6px 12px !important;
+  font-size: 10px !important;
+  letter-spacing: .6px !important;
+  border-radius: 3px !important;
+}
+.menu-card, .menu-card *, .menu-item-backdrop, .menu-item-backdrop * {
+  -webkit-tap-highlight-color: transparent !important;
+  tap-highlight-color: transparent;
+}
+.menu-card:active, .menu-card:focus, .menu-card:focus-visible {
+  outline: none !important;
+  box-shadow: none;
+}
+.menu-card:focus-visible { border-top-color: var(--red); }
+.menu-item-backdrop button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.gallery-video-label { display: none !important; }

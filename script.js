@@ -344,6 +344,23 @@ categoryToggle.addEventListener('click', () => {
   const open = categoryPanel.classList.toggle('hidden') === false;
   categoryToggle.setAttribute('aria-expanded', String(open));
 });
+
+// Close the category menu when the user taps/clicks anywhere outside it.
+document.addEventListener('pointerdown', event => {
+  if (!categoryPanel || categoryPanel.classList.contains('hidden')) return;
+  const control = document.querySelector('.menu-category-control');
+  if (control && !control.contains(event.target)) {
+    categoryPanel.classList.add('hidden');
+    categoryToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && categoryPanel && !categoryPanel.classList.contains('hidden')) {
+    categoryPanel.classList.add('hidden');
+    categoryToggle.setAttribute('aria-expanded', 'false');
+    categoryToggle.focus();
+  }
+});
 document.getElementById('admin-add-item').addEventListener('click', () => openAdminEditor());
 document.querySelector('.admin-editor-close').addEventListener('click', closeAdminEditor);
 adminEditor.addEventListener('click', event => { if (event.target === adminEditor) closeAdminEditor(); });
