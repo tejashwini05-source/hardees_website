@@ -424,3 +424,27 @@ body.modal-open{overflow:hidden;}
 
 /* Keep the menu View More control compact */
 .view-more{padding:8px 16px!important;font-size:12px!important;min-height:34px!important;line-height:1.2!important;}
+
+
+/* Expandable category menu and admin item controls */
+.menu-category-control{display:flex;justify-content:center;margin:24px 0 30px}
+.category-menu-toggle{background:#171717;color:#ffc928;border:2px solid #d71920;padding:11px 23px;border-radius:4px;font:900 13px Montserrat,Arial,sans-serif;letter-spacing:1px;cursor:pointer;box-shadow:0 5px 14px #00000016}
+.category-menu-toggle:hover{background:#d71920;color:#fff}
+.menu-category-panel{width:100%;max-width:980px;margin:0 auto 26px;padding:22px;background:#fff;border:1px solid #f0d9b1;border-top:4px solid #d71920;box-shadow:0 10px 28px #0000000d}
+.category-panel-title{font:900 20px 'Barlow Condensed',sans-serif;letter-spacing:1px;margin:0 0 14px;text-align:center}
+.menu-category-list{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
+.menu-category-button{border:1px solid #ddd;background:#fff;color:#222;padding:10px 14px;border-radius:3px;font:800 11px Montserrat,Arial,sans-serif;cursor:pointer}
+.menu-category-button:hover,.menu-category-button.active{background:#d71920;border-color:#d71920;color:#fff}
+.category-hidden{display:none!important}
+.admin-menu-toolbar{margin:0 auto 25px;padding:16px 19px;max-width:980px;background:#171717;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:15px;border-left:5px solid #ffc928}
+.admin-menu-toolbar strong,.admin-menu-toolbar small{display:block}
+.admin-menu-toolbar strong{font:900 16px 'Barlow Condensed',sans-serif;letter-spacing:1px;color:#ffc928}
+.admin-menu-toolbar small{font-size:10px;color:#ccc;margin-top:4px}
+.admin-add-button{background:#ffc928;border:0;padding:12px 16px;font:900 11px Montserrat,Arial,sans-serif;cursor:pointer}
+.admin-item-actions{display:flex;gap:8px;margin-top:15px}
+.admin-item-actions button{background:#171717;color:#ffc928;border:0;padding:8px 12px;font:800 10px Montserrat,Arial,sans-serif;cursor:pointer}
+.admin-item-actions button:last-child{background:#d71920;color:#fff}
+.admin-created-card .food-photo{width:100%;object-fit:cover}
+.admin-editor{max-height:90vh;overflow:auto}
+.admin-editor form{gap:7px}
+@media(max-width:520px){.menu-category-panel{padding:16px 10px}.menu-category-button{padding:9px 10px;font-size:10px}.admin-menu-toolbar{align-items:flex-start;flex-direction:column}.admin-add-button{width:100%}}

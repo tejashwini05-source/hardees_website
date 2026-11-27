@@ -126,10 +126,27 @@ document.addEventListener('keydown', event => {
   if (lightbox.classList.contains('open') && event.key === 'ArrowLeft') showGalleryItem(activeGalleryItem - 1);
 });
 
-// This is a front-end demo form. Real staff/admin authentication must be connected server-side.
+// Demo login: production admin permissions must be enforced by a secure backend.
+let isMenuAdmin = false;
 document.getElementById('login-form').addEventListener('submit', event => {
   event.preventDefault();
-  alert('Login form is ready for your staff/admin authentication backend.');
+  const role = document.getElementById('login-role').value;
+  const username = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (role === 'admin' && username === 'admin' && password === 'admin123') {
+    isMenuAdmin = true;
+    document.getElementById('admin-menu-toolbar').classList.remove('hidden');
+    document.querySelectorAll('.admin-item-actions').forEach(el => el.classList.remove('hidden'));
+    closeModal();
+    document.getElementById('login-form').reset();
+    alert('Admin mode enabled. You can now add, edit and remove menu items.');
+  } else if (role === 'staff') {
+    closeModal();
+    alert('Staff view enabled. Menu editing is available to Admin only.');
+    document.getElementById('login-form').reset();
+  } else {
+    alert('Invalid admin login. Use the demo admin credentials shown in the login window.');
+  }
 });
 
 // Click a menu item to view its larger photo and full details in a popup.
@@ -178,6 +195,178 @@ if (menuItemModal) {
 
 
 
+
+
+// Category-based menu navigation and admin menu management.
+const MENU_CATEGORIES = [
+  'All Items', 'Chicken & More Combos', 'Charbroiled Burgers', 'Chicken & More',
+  'Beverages', "Biryani's", 'Starters', 'Veg', 'Non Veg',
+  'Veg Starters', 'Non-Veg Starters', 'Sides', 'Breakfast', 'Desserts'
+];
+const categoryList = document.getElementById('menu-category-list');
+const categorySelect = document.getElementById('admin-item-category');
+const categoryPanel = document.getElementById('menu-category-panel');
+const categoryToggle = document.getElementById('category-menu-toggle');
+const menuGrid = document.getElementById('menu-grid');
+const adminEditor = document.getElementById('admin-item-modal');
+const adminForm = document.getElementById('admin-item-form');
+let activeMenuCategory = 'All Items';
+let editingMenuCard = null;
+
+function guessMenuCategory(title) {
+  const t = title.toLowerCase();
+  if (/biryani/.test(t)) return "Biryani's";
+  if (/combo/.test(t)) return 'Chicken & More Combos';
+  if (/veg starter/.test(t)) return 'Veg Starters';
+  if (/non.?veg starter/.test(t)) return 'Non-Veg Starters';
+  if (/starter/.test(t)) return 'Starters';
+  if (/shake|coca-cola|coffee|drink|beverage|tea|juice|water/.test(t)) return 'Beverages';
+  if (/pie|cinnamon|dessert|ice cream/.test(t)) return 'Desserts';
+  if (/burger|famous star|bacon beast|frisco/.test(t)) return 'Charbroiled Burgers';
+  if (/tender|chicken|steak|pork|sausage|bacon/.test(t)) return 'Chicken & More';
+  if (/fries|fries|hash|crispy curls|side/.test(t)) return 'Sides';
+  if (/biscuit|omelet|breakfast|burrito/.test(t)) return 'Breakfast';
+  return 'All Items';
+}
+function makeCategoryButtons() {
+  categoryList.innerHTML = '';
+  MENU_CATEGORIES.forEach(category => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'menu-category-button' + (category === activeMenuCategory ? ' active' : '');
+    button.textContent = category;
+    button.addEventListener('click', () => {
+      activeMenuCategory = category;
+      filterMenuCards();
+      makeCategoryButtons();
+      categoryPanel.classList.remove('hidden');
+      categoryToggle.setAttribute('aria-expanded', 'true');
+    });
+    categoryList.appendChild(button);
+  });
+}
+function filterMenuCards() {
+  menuGrid.querySelectorAll('.menu-card').forEach(card => {
+    const match = activeMenuCategory === 'All Items' || card.dataset.category === activeMenuCategory;
+    card.classList.toggle('category-hidden', !match);
+  });
+}
+function addAdminActions(card) {
+  if (card.querySelector('.admin-item-actions')) return;
+  const actions = document.createElement('div');
+  actions.className = 'admin-item-actions hidden';
+  const edit = document.createElement('button');
+  edit.type = 'button'; edit.textContent = 'EDIT';
+  edit.addEventListener('click', event => { event.stopPropagation(); openAdminEditor(card); });
+  const remove = document.createElement('button');
+  remove.type = 'button'; remove.textContent = 'REMOVE';
+  remove.addEventListener('click', event => {
+    event.stopPropagation();
+    const name = card.querySelector('h3')?.textContent || 'this item';
+    if (confirm(`Remove ${name} from the menu?`)) {
+      card.remove();
+      saveMenuItems();
+    }
+  });
+  actions.append(edit, remove);
+  card.querySelector('.menu-card-copy')?.appendChild(actions);
+  if (isMenuAdmin) actions.classList.remove('hidden');
+}
+function saveMenuItems() {
+  const items = [...menuGrid.querySelectorAll('.menu-card')].map(card => ({
+    name: card.querySelector('h3')?.textContent || '',
+    description: card.querySelector('.menu-card-copy p')?.textContent || '',
+    price: card.querySelector('.menu-price')?.textContent || '',
+    category: card.dataset.category || 'All Items',
+    image: card.querySelector('.food-photo')?.getAttribute('src') || 'assets/menu-burger.jpg'
+  }));
+  localStorage.setItem('hardeesAdminMenuItems', JSON.stringify(items));
+}
+function createMenuCard(item) {
+  const card = document.createElement('article');
+  card.className = 'menu-card admin-created-card';
+  card.setAttribute('role', 'button'); card.tabIndex = 0; card.setAttribute('aria-haspopup', 'dialog');
+  const image = document.createElement('img');
+  image.className = 'food-photo'; image.src = item.image || 'assets/menu-burger.jpg'; image.alt = item.name; image.loading = 'lazy';
+  const copy = document.createElement('div'); copy.className = 'menu-card-copy';
+  const title = document.createElement('h3'); title.textContent = item.name;
+  const description = document.createElement('p'); description.textContent = item.description || '';
+  const price = document.createElement('strong'); price.className = 'menu-price'; price.textContent = item.price || 'View item details';
+  copy.append(title, description, price); card.append(image, copy);
+  card.dataset.category = item.category || guessMenuCategory(item.name);
+  card.addEventListener('click', () => openMenuItem(card));
+  card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openMenuItem(card); } });
+  addAdminActions(card);
+  return card;
+}
+function openAdminEditor(card = null) {
+  editingMenuCard = card;
+  document.getElementById('admin-item-heading').textContent = card ? 'EDIT MENU ITEM' : 'ADD MENU ITEM';
+  document.getElementById('admin-item-name').value = card?.querySelector('h3')?.textContent || '';
+  document.getElementById('admin-item-description').value = card?.querySelector('.menu-card-copy p')?.textContent || '';
+  document.getElementById('admin-item-price').value = card?.querySelector('.menu-price')?.textContent || '';
+  document.getElementById('admin-item-category').value = card?.dataset.category || 'Charbroiled Burgers';
+  document.getElementById('admin-item-image').value = card?.querySelector('.food-photo')?.getAttribute('src') || 'assets/menu-burger.jpg';
+  adminEditor.classList.add('open'); adminEditor.setAttribute('aria-hidden', 'false');
+}
+function closeAdminEditor() {
+  adminEditor.classList.remove('open'); adminEditor.setAttribute('aria-hidden', 'true');
+  editingMenuCard = null;
+}
+MENU_CATEGORIES.forEach(category => {
+  const option = document.createElement('option'); option.value = category; option.textContent = category;
+  if (category !== 'All Items') categorySelect.appendChild(option);
+});
+menuGrid.querySelectorAll('.menu-card').forEach(card => {
+  const title = card.querySelector('h3')?.textContent || '';
+  card.dataset.category = guessMenuCategory(title);
+  addAdminActions(card);
+});
+// Restore the admin-managed menu on this browser after refresh.
+try {
+  const savedMenu = JSON.parse(localStorage.getItem('hardeesAdminMenuItems') || 'null');
+  if (Array.isArray(savedMenu)) {
+    menuGrid.innerHTML = '';
+    savedMenu.forEach(item => menuGrid.appendChild(createMenuCard(item)));
+  }
+} catch (error) {
+  console.warn('Saved menu could not be restored.', error);
+}
+makeCategoryButtons();
+categoryToggle.addEventListener('click', () => {
+  const open = categoryPanel.classList.toggle('hidden') === false;
+  categoryToggle.setAttribute('aria-expanded', String(open));
+});
+document.getElementById('admin-add-item').addEventListener('click', () => openAdminEditor());
+document.querySelector('.admin-editor-close').addEventListener('click', closeAdminEditor);
+adminEditor.addEventListener('click', event => { if (event.target === adminEditor) closeAdminEditor(); });
+adminForm.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!isMenuAdmin) return alert('Only an Admin can manage menu items.');
+  const item = {
+    name: document.getElementById('admin-item-name').value.trim(),
+    description: document.getElementById('admin-item-description').value.trim(),
+    price: document.getElementById('admin-item-price').value.trim(),
+    category: categorySelect.value,
+    image: document.getElementById('admin-item-image').value.trim() || 'assets/menu-burger.jpg'
+  };
+  if (editingMenuCard) {
+    const photo = editingMenuCard.querySelector('.food-photo');
+    photo.src = item.image; photo.alt = item.name;
+    editingMenuCard.querySelector('h3').textContent = item.name;
+    editingMenuCard.querySelector('.menu-card-copy p').textContent = item.description;
+    editingMenuCard.querySelector('.menu-price').textContent = item.price || 'View item details';
+    editingMenuCard.dataset.category = item.category;
+  } else {
+    menuGrid.appendChild(createMenuCard(item));
+  }
+  saveMenuItems();
+  closeAdminEditor();
+  filterMenuCards();
+});
+document.getElementById('login-role').addEventListener('change', event => {
+  document.getElementById('login-title').textContent = event.target.value === 'admin' ? 'ADMIN LOGIN' : 'STAFF LOGIN';
+});
 
 // Play the promotional video automatically when the website opens.
 const videoAdPopup = document.getElementById('video-ad-popup');

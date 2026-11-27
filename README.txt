@@ -20,3 +20,9 @@ Important:
 - The LOGIN form is still a front-end demo. Connect it to your secure staff/admin authentication backend before using it for real accounts.
 - The offers card scrolls to the menu; live coupon/offer data is not connected.
 - The welcome slideshow and menu photography use online image URLs and need an internet connection.
+
+- Added an expandable MENU button below Latest Cravings with category filtering.
+- Added menu categories including Chicken & More Combos, Charbroiled Burgers, Chicken & More, Beverages, Biryani's, Starters, Veg, Non Veg, Veg Starters and Non-Veg Starters.
+- Added demo Admin-only add/edit/remove menu controls. Changes are saved in this browser using localStorage.
+- Demo admin login: username `admin`, password `admin123`.
+- IMPORTANT: This is a front-end demonstration. Browser-side login and localStorage are not secure or shared across devices. Use a server/database and server-side role permissions for real admin-only management.

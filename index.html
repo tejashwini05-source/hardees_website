@@ -43,6 +43,19 @@
       <article class="offers-card" id="offers" role="button" tabindex="0" aria-label="Explore menu and offers"><div><p class="eyebrow">SPECIALS &amp; SAVINGS</p><h3>GOOD DEALS. GREAT TASTE.</h3><p>Tap to explore the menu and available offers.</p></div><span class="offers-mark">OFFERS <span aria-hidden="true">↘</span></span></article>
       <div class="section-heading"><p class="eyebrow">MADE FRESH FOR YOU</p><h2>LATEST CRAVINGS</h2><p>Enjoy hand-crafted breakfast, burgers, chicken and delicious sides.</p></div>
       <p class="menu-price-note">Sample prices are shown for featured items; additional items display calories. Actual prices may vary by location.</p>
+
+      <div class="menu-category-control">
+        <button class="category-menu-toggle" id="category-menu-toggle" type="button" aria-expanded="false" aria-controls="menu-category-panel">☰ MENU</button>
+        <div class="menu-category-panel hidden" id="menu-category-panel">
+          <p class="category-panel-title">EXPLORE OUR MENU</p>
+          <div class="menu-category-list" id="menu-category-list"></div>
+        </div>
+      </div>
+      <div class="admin-menu-toolbar hidden" id="admin-menu-toolbar">
+        <div><strong>ADMIN MENU MANAGEMENT</strong><small>Add, edit or remove menu items</small></div>
+        <button class="admin-add-button" id="admin-add-item" type="button">＋ ADD ITEM</button>
+      </div>
+
       <div class="menu-grid" id="menu-grid">
         <article class="menu-card" role="button" tabindex="0" aria-haspopup="dialog">
           <img class="food-photo" src="assets/menu-burger.jpg" alt="Famous Star Burger" loading="lazy">
@@ -758,6 +771,21 @@
     <div class="footer-column"><h3>QUICK LINKS</h3><a href="#menu">Menu</a><a href="#offers">Offers</a><a href="#location">Location</a><a href="#login" data-open-login>Login</a></div>
   </div><small>© 2026 Hardee's 481 US Hwy 1 S, Rockingham, NC 28379</small></footer>
 
+
+  <div class="modal-backdrop" id="admin-item-modal" aria-hidden="true">
+    <section class="login-modal admin-editor" role="dialog" aria-modal="true" aria-labelledby="admin-item-heading">
+      <button class="modal-close admin-editor-close" type="button" aria-label="Close editor">×</button>
+      <p class="eyebrow">ADMIN CONTROL</p><h2 id="admin-item-heading">ADD MENU ITEM</h2>
+      <form id="admin-item-form">
+        <label for="admin-item-name">Item name</label><input id="admin-item-name" required maxlength="90" placeholder="Enter item name">
+        <label for="admin-item-description">Description</label><input id="admin-item-description" maxlength="180" placeholder="Short description">
+        <label for="admin-item-price">Price / details</label><input id="admin-item-price" maxlength="40" placeholder="e.g. $5.99">
+        <label for="admin-item-category">Category</label><select id="admin-item-category" required></select>
+        <label for="admin-item-image">Image path</label><input id="admin-item-image" placeholder="assets/menu-burger.jpg">
+        <button class="button button-yellow" type="submit">SAVE ITEM</button>
+      </form>
+    </section>
+  </div>
   <div class="menu-item-backdrop" id="menu-item-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-item-title">
     <section class="menu-item-modal">
       <button class="menu-item-close" type="button" aria-label="Close item details">×</button>
@@ -765,7 +793,7 @@
       <div class="menu-item-details"><p class="eyebrow">MADE FRESH FOR YOU</p><h2 id="menu-item-title"></h2><p id="menu-item-description"></p><strong class="menu-item-price" id="menu-item-price"></strong></div>
     </section>
   </div>
-  <div class="modal-backdrop" id="login-modal" aria-hidden="true"><section class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title"><button class="modal-close" type="button" aria-label="Close login">×</button><p class="eyebrow">TEAM ACCESS</p><h2 id="login-title">LOGIN</h2><form id="login-form"><label for="login-role">Login as</label><select id="login-role" required><option value="staff">Staff</option><option value="admin">Admin</option></select><label for="login-email">Email / Username</label><input id="login-email" type="text" placeholder="Enter your email or username" required><label for="login-password">Password</label><input id="login-password" type="password" placeholder="Enter your password" required><button class="button button-yellow" type="submit">LOGIN</button><p class="login-note">Demo login interface — connect your authentication system to enable secure staff and admin access.</p></form></section></div>
+  <div class="modal-backdrop" id="login-modal" aria-hidden="true"><section class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title"><button class="modal-close" type="button" aria-label="Close login">×</button><p class="eyebrow">TEAM ACCESS</p><h2 id="login-title">LOGIN</h2><form id="login-form"><label for="login-role">Login as</label><select id="login-role" required><option value="staff">Staff</option><option value="admin">Admin</option></select><label for="login-email">Email / Username</label><input id="login-email" type="text" placeholder="Enter your email or username" required><label for="login-password">Password</label><input id="login-password" type="password" placeholder="Enter your password" required><button class="button button-yellow" type="submit">LOGIN</button><p class="login-note">Demo only: Admin username <b>admin</b>, password <b>admin123</b>. Connect secure server-side authentication before publishing.</p></form></section></div>
   <div class="lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
     <button class="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
     <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous photo">‹</button>
