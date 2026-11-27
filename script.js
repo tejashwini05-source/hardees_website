@@ -239,8 +239,15 @@ function makeCategoryButtons() {
       activeMenuCategory = category;
       filterMenuCards();
       makeCategoryButtons();
-      categoryPanel.classList.remove('hidden');
-      categoryToggle.setAttribute('aria-expanded', 'true');
+      // On phones, close the side drawer after choosing a category so the matching items are immediately visible.
+      if (window.matchMedia('(max-width: 560px)').matches) {
+        categoryPanel.classList.add('hidden');
+        categoryToggle.setAttribute('aria-expanded', 'false');
+        document.getElementById('menu-grid').scrollIntoView({behavior:'smooth', block:'start'});
+      } else {
+        categoryPanel.classList.remove('hidden');
+        categoryToggle.setAttribute('aria-expanded', 'true');
+      }
     });
     categoryList.appendChild(button);
   });

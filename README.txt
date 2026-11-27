@@ -26,3 +26,5 @@ Important:
 - Added demo Admin-only add/edit/remove menu controls. Changes are saved in this browser using localStorage.
 - Demo admin login: username `admin`, password `admin123`.
 - IMPORTANT: This is a front-end demonstration. Browser-side login and localStorage are not secure or shared across devices. Use a server/database and server-side role permissions for real admin-only management.
+
+Mobile menu update: On phones, the MENU control is compact and left-aligned below Latest Cravings. Tapping it opens a translucent black vertical category drawer; choosing a category closes the drawer and scrolls to the filtered menu items.
